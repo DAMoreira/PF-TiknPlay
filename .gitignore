@@ -64,7 +64,7 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env.test
+
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -95,3 +95,13 @@ typings/
 avatars/
 images/
 react-material-dashboard-master/
+/.idea/.gitignore
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/modules.xml
+/client/package-lock.json
+/server/package-lock.json
+/package-lock.json
+/.idea/PF-TiknPlay.iml
+/.idea/codeStyles/Project.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml
