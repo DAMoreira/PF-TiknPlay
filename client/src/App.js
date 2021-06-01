@@ -9,7 +9,7 @@ import { loadUser } from './store/actions';
 
 import theme from './theme';
 import { Alert } from './components';
-import { pageCursors } from './utils';
+//import { pageCursors } from './utils';
 import Routes from './Routes';
 
 import './assets/scss/index.scss';
@@ -19,7 +19,7 @@ import { CssBaseline } from '@material-ui/core';
 class App extends Component {
   componentDidMount() {
     store.dispatch(loadUser());
-    pageCursors();
+    //pageCursors();
   }
   render() {
     return (
