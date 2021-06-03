@@ -79,7 +79,7 @@ export default function MovieInfo(props) {
           {movie.cast && (
             <div className={classes.infoBox}>
               <Typography variant="subtitle1" color="inherit">
-                Cast
+                Reparto
               </Typography>
               <Typography variant="caption" color="inherit">
                 {movie.cast}
@@ -89,7 +89,7 @@ export default function MovieInfo(props) {
           {movie.genre && (
             <div className={classes.infoBox}>
               <Typography variant="subtitle1" color="inherit">
-                Genre
+                Géneros
               </Typography>
               <Typography variant="caption" color="inherit">
                 {movie.genre}

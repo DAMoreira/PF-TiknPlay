@@ -42,18 +42,18 @@ class Navbar extends Component {
             </Typography>
           </Link>
           <div className={classes.navLinks}>
-            <Link className={classes.navLink} to="/">
+            {/*<Link className={classes.navLink} to="/">
               Home
-            </Link>
+        </Link>*/}
             <Link className={classes.navLink} to="/movie/category/nowShowing">
-              Now Showing
+              Cartelera
             </Link>
             <Link className={classes.navLink} to="/movie/category/comingSoon">
-              Coming Soon
+            Próximamente
             </Link>
-            <Link className={classes.navLink} to="/cinemas">
+            {/*<Link className={classes.navLink} to="/cinemas">
               Cinemas
-            </Link>
+            </Link>*/}
           </div>
 
           <div className={classes.navAccount}>
@@ -68,7 +68,11 @@ class Navbar extends Component {
                           ? '/admin/dashboard'
                           : '/mydashboard'
                       }>
-                      Dashboard
+                      {
+                        user.role !== 'guest'
+                          ? "Panel de Control"
+                          : "Mis reservas"
+                      }
                     </Link>
                   </ListItem>
                 )}
@@ -76,13 +80,13 @@ class Navbar extends Component {
                 {isAuth ? (
                   <ListItem>
                     <Link className={classes.navLink} onClick={logout} to="/">
-                      Logout
+                      Cerrar Sesión
                     </Link>
                   </ListItem>
                 ) : (
                   <ListItem>
                     <Link className={classes.navLink} to="/login">
-                      Login
+                      Iniciar Sesión
                     </Link>
                   </ListItem>
                 )}
@@ -120,30 +124,30 @@ class Navbar extends Component {
             <ul
               className={classes.innerNav}
               onClick={() => this.setState({ showMenu: !this.state.showMenu })}>
-              <li className={classes.innerNavListItem}>
+              {/*<li className={classes.innerNavListItem}>
                 <Link className={classes.innerNavLink} to="/">
                   Home
                 </Link>
-              </li>
+        </li>*/}
               <li className={classes.innerNavListItem}>
                 <Link
                   className={classes.innerNavLink}
                   to="/movie/category/nowShowing">
-                  Now Showing
+                  Cartelera
                 </Link>
               </li>
               <li className={classes.innerNavListItem}>
                 <Link
                   className={classes.innerNavLink}
                   to="/movie/category/comingSoon">
-                  Coming Soon
+                  Próximamente
                 </Link>
               </li>
-              <li className={classes.innerNavListItem}>
+              {/*<li className={classes.innerNavListItem}>
                 <Link className={classes.innerNavLink} to="/cinemas">
                   Cinemas
                 </Link>
-              </li>
+              </li>*/}
             </ul>
           </div>
         </div>

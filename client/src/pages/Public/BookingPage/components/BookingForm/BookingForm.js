@@ -44,7 +44,7 @@ export default function BookingForm(props) {
           fullWidth
           select
           value={selectedCinema}
-          label="Select Cinema"
+          label="Seleccionar sala"
           variant="outlined"
           onChange={onChangeCinema}>
           {cinemas.map(cinema => (
@@ -62,7 +62,7 @@ export default function BookingForm(props) {
               margin="none"
               fullWidth
               id="start-date"
-              label="Start Date"
+              label="Fecha"
               minDate={new Date(showtime.startDate)}
               maxDate={new Date(showtime.endDate)}
               value={selectedDate}
@@ -80,7 +80,7 @@ export default function BookingForm(props) {
             fullWidth
             select
             value={selectedTime}
-            label="Select Time"
+            label="Horario"
             variant="outlined"
             onChange={onChangeTime}>
             {times.map((time, index) => (
