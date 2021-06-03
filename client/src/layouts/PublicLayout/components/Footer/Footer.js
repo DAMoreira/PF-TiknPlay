@@ -11,7 +11,7 @@ export default function Footer() {
         &copy; Tik&Play. 2021
       </Typography>
       <Typography variant="caption">
-        Crafted with love |{' '}
+         Proyecto final |{' '}
         <Link href="https://github.com/DAMoreira/PF-TiknPlay" target="_blank" rel="noopener">
           Tik&Play
         </Link>

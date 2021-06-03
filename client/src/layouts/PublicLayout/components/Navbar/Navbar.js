@@ -38,7 +38,7 @@ class Navbar extends Component {
           })}>
           <Link className={classes.logoLink} to="/">
             <Typography className={classes.logo} variant="h2">
-              Tik&Play
+              <img src="https://i.postimg.cc/SxzHHPjr/6.png" width="120" ></img>
             </Typography>
           </Link>
           <div className={classes.navLinks}>
@@ -49,7 +49,7 @@ class Navbar extends Component {
               Cartelera
             </Link>
             <Link className={classes.navLink} to="/movie/category/comingSoon">
-            Próximamente
+              Próximamente
             </Link>
             {/*<Link className={classes.navLink} to="/cinemas">
               Cinemas

@@ -76,7 +76,7 @@ class Account extends Component {
             <div className={classes.field}>
               <TextField
                 className={classes.textField}
-                helperText="Please specify the first name"
+                helperText="Especificar el nombre completo"
                 label="FUll Name"
                 margin="dense"
                 required

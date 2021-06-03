@@ -99,11 +99,11 @@ class AddShowtime extends Component {
 
     const rootClassName = classNames(classes.root, className);
     const title = this.props.selectedShowtime
-      ? 'Edit Showtime'
-      : 'Add Showtime';
+      ? 'Modificar función'
+      : 'Agregar función';
     const submitButton = this.props.selectedShowtime
-      ? 'Update Showtime'
-      : 'Save Details';
+      ? 'Guardar cambios'
+      : 'Guardar cambios';
     const submitAction = this.props.selectedShowtime
       ? () => this.onUpdateShowtime()
       : () => this.onAddShowtime();
@@ -119,8 +119,8 @@ class AddShowtime extends Component {
               fullWidth
               select
               className={classes.textField}
-              helperText="Please specify the Time"
-              label="Time"
+              helperText="Especificar el horario"
+              label="Horario"
               margin="dense"
               required
               value={startAt}
@@ -142,7 +142,7 @@ class AddShowtime extends Component {
               fullWidth
               select
               className={classes.textField}
-              label="Movie"
+              label="Película"
               margin="dense"
               required
               value={movieId}
@@ -161,7 +161,7 @@ class AddShowtime extends Component {
               fullWidth
               select
               className={classes.textField}
-              label="Cinema"
+              label="Sala"
               margin="dense"
               required
               value={cinemaId}
@@ -184,7 +184,7 @@ class AddShowtime extends Component {
                 inputVariant="outlined"
                 margin="normal"
                 id="start-date"
-                label="Start Date"
+                label="Fecha de inicio"
                 minDate={new Date()}
                 maxDate={this.onFilterMaxDate()}
                 value={startDate}
@@ -199,7 +199,7 @@ class AddShowtime extends Component {
                 inputVariant="outlined"
                 margin="normal"
                 id="end-date"
-                label="End Date"
+                label="Fecha de fin"
                 minDate={new Date(startDate)}
                 maxDate={this.onFilterMaxDate()}
                 value={endDate}

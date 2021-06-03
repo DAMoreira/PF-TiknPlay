@@ -50,7 +50,7 @@ class ShowtimeList extends Component {
         />
         <div className={classes.content}>
           {!showtimes.length ? (
-            <Typography variant="h6">There are no showtimes</Typography>
+            <Typography variant="h6">No existen funciones</Typography>
           ) : (
             <ShowtimesTable
               onSelectShowtime={selectShowtime}

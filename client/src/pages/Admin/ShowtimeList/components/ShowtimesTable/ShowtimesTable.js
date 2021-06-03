@@ -75,11 +75,11 @@ class ShowtimesTable extends Component {
                   />
                   ID
                 </TableCell>
-                <TableCell align="left">Movie</TableCell>
-                <TableCell align="left">Cinema</TableCell>
-                <TableCell align="left">Start Date</TableCell>
-                <TableCell align="left">End Date</TableCell>
-                <TableCell align="left">Time</TableCell>
+                <TableCell align="left">Película</TableCell>
+                <TableCell align="left">Sala</TableCell>
+                <TableCell align="left">Fecha de inicio</TableCell>
+                <TableCell align="left">Fecha de fin</TableCell>
+                <TableCell align="left">Horario</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -132,12 +132,12 @@ class ShowtimesTable extends Component {
           </Table>
           <TablePagination
             backIconButtonProps={{
-              'aria-label': 'Previous Page'
+              'aria-label': 'Anterior'
             }}
             component="div"
             count={showtimes.length}
             nextIconButtonProps={{
-              'aria-label': 'Next Page'
+              'aria-label': 'Siguiente'
             }}
             onChangePage={this.handleChangePage}
             onChangeRowsPerPage={this.handleChangeRowsPerPage}

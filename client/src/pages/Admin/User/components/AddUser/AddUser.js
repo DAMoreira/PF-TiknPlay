@@ -81,7 +81,7 @@ class AddUser extends Component {
             <TextField
               fullWidth
               className={classes.textField}
-              helperText="Please specify the Full Name"
+              helperText="Especificar el nombre completo"
               label="Full Name"
               margin="dense"
               required
