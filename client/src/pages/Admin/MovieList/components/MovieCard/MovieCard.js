@@ -77,7 +77,7 @@ function MovieCard(props) {
       <div className={classes.stats}>
         <AccessTimeIcon className={classes.updateIcon} />
         <Typography className={classes.updateText} variant="body2">
-          {movie.duration} minutes
+          {movie.duration} minutos
         </Typography>
       </div>
     </Paper>
