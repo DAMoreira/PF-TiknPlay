@@ -62,14 +62,14 @@ class ReservationsTable extends Component {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell align="left">User</TableCell>
-                <TableCell align="left">Phone</TableCell>
-                <TableCell align="left">Start At</TableCell>
-                <TableCell align="left">Movie</TableCell>
-                <TableCell align="left">Cinema</TableCell>
-                <TableCell align="left">Ticket Price</TableCell>
-                <TableCell align="left">Total</TableCell>
-                <TableCell align="left">Checkin</TableCell>
+                <TableCell align="left">Usuario</TableCell>
+                <TableCell align="left">Teléfono</TableCell>
+                <TableCell align="left">Horario</TableCell>
+                <TableCell align="left">Película</TableCell>
+                <TableCell align="left">Sala</TableCell>
+                <TableCell align="left">Precio Entrada</TableCell>
+                <TableCell align="left">Precio Total</TableCell>
+                <TableCell align="left">Check in</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>

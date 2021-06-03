@@ -4,6 +4,7 @@ export default theme => ({
     height: '64px'
   },
   tableCell: {
+    textTransform: 'capitalize',
     whiteSpace: 'nowrap'
   },
   tableCellInner: {
