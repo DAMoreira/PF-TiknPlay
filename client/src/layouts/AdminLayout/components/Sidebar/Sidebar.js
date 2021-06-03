@@ -33,7 +33,7 @@ class Sidebar extends Component {
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
-              primary="Dashboard"
+              primary="Panel de Control"
             />
           </ListItem>
           <ListItem
@@ -46,7 +46,7 @@ class Sidebar extends Component {
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
-              primary="Movies"
+              primary="Películas"
             />
           </ListItem>
           <ListItem
@@ -59,7 +59,7 @@ class Sidebar extends Component {
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
-              primary="Cinemas"
+              primary="Salas"
             />
           </ListItem>
           <ListItem
@@ -72,7 +72,7 @@ class Sidebar extends Component {
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
-              primary="Showtimes"
+              primary="Funciones"
             />
           </ListItem>
           <ListItem
@@ -85,7 +85,7 @@ class Sidebar extends Component {
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
-              primary="Reservations"
+              primary="Reservas"
             />
           </ListItem>
           {user && user.role === 'superadmin' && (
@@ -99,7 +99,7 @@ class Sidebar extends Component {
               </ListItemIcon>
               <ListItemText
                 classes={{ primary: classes.listItemText }}
-                primary="Users"
+                primary="Usuarios"
               />
             </ListItem>
           )}
@@ -113,7 +113,7 @@ class Sidebar extends Component {
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
-              primary="Account"
+              primary="Mi Cuenta"
             />
           </ListItem>
         </List>
@@ -123,7 +123,7 @@ class Sidebar extends Component {
           disablePadding
           subheader={
             <ListSubheader className={classes.listSubheader}>
-              Support
+              Ayuda
             </ListSubheader>
           }>
           <ListItem
@@ -136,7 +136,7 @@ class Sidebar extends Component {
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
-              primary="Customer support"
+              primary="Soporte"
             />
           </ListItem>
         </List>
