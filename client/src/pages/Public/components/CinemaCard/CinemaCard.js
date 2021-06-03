@@ -67,27 +67,27 @@ function CinemaCard(props) {
   const rootClassName = classNames(classes.root, className);
   return (
     <Paper className={rootClassName}>
-      <div className={classes.imageWrapper}>
+      {/*<div className={classes.imageWrapper}>
         <img alt="cinema" className={classes.image} src={cinemaImage} />
-      </div>
+  </div>*/}
       <div className={classes.details}>
         <Typography className={classes.name} variant="h4">
           {cinema.name}
         </Typography>
-        <Typography className={classes.city} variant="body1">
+        {/*<Typography className={classes.city} variant="body1">
           {cinema.city}
-        </Typography>
+</Typography>*/}
       </div>
       <div className={classes.stats}>
         <AttachMoney className={classes.eventIcon} />
         <Typography className={classes.eventText} variant="body2">
-          {cinema.ticketPrice} <span>&euro;</span> per movie
+          {cinema.ticketPrice} <span>&#36;</span> por asiento
         </Typography>
       </div>
       <div className={classes.stats}>
         <EventSeat className={classes.eventIcon} />
         <Typography className={classes.eventText} variant="body2">
-          {cinema.seatsAvailable} seats Available
+          {cinema.seatsAvailable} asientos
         </Typography>
       </div>
     </Paper>

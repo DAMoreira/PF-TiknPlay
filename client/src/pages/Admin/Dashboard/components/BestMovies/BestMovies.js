@@ -52,10 +52,10 @@ const BestMovies = props => {
       <CardHeader
         action={
           <Button size="small" variant="text">
-            Best 5<ArrowDropDownIcon />
+            Mejores 5<ArrowDropDownIcon />
           </Button>
         }
-        title="Best Movies"
+        title="Películas mas reservadas"
       />
       <Divider />
       <CardContent>
@@ -64,11 +64,11 @@ const BestMovies = props => {
         </div>
       </CardContent>
       <Divider />
-      <CardActions className={classes.actions}>
+      {/*<CardActions className={classes.actions}>
         <Button color="primary" size="small" variant="text">
           Overview <ArrowRightIcon />
         </Button>
-      </CardActions>
+      </CardActions>*/}
     </Card>
   );
 };

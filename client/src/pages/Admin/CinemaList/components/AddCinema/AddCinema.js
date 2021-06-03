@@ -88,7 +88,7 @@ class AddCinema extends Component {
       <>
         <div className={classes.field}>
           <Button onClick={() => this.onAddSeatRow()}>
-            <Add /> add Seats
+            <Add /> agregar asientos
           </Button>
         </div>
         {seats.length > 0 &&
@@ -98,7 +98,7 @@ class AddCinema extends Component {
                 key={`new-seat-${index}`}
                 className={classes.textField}
                 label={
-                  'Add number of seats for row : ' +
+                  'Número de asientos de la fila : ' +
                   (index + 10).toString(36).toUpperCase()
                 }
                 margin="dense"
@@ -132,10 +132,10 @@ class AddCinema extends Component {
     } = this.state;
 
     const rootClassName = classNames(classes.root, className);
-    const mainTitle = this.props.editCinema ? 'Edit Cinema' : 'Add Cinema';
+    const mainTitle = this.props.editCinema ? 'Modificar sala' : 'Agregar Sala';
     const submitButton = this.props.editCinema
-      ? 'Update Cinema'
-      : 'Save Details';
+      ? 'Guardar cambios'
+      : 'Guardar cambios';
     const submitAction = this.props.editCinema
       ? () => this.onSubmitAction('update')
       : () => this.onSubmitAction('create');
@@ -149,8 +149,8 @@ class AddCinema extends Component {
           <div className={classes.field}>
             <TextField
               className={classes.textField}
-              helperText="Please specify the cinema name"
-              label="Name"
+              helperText="Especificar el nombre de la sala"
+              label="Nombre"
               margin="dense"
               required
               value={name}
@@ -160,7 +160,7 @@ class AddCinema extends Component {
               }
             />
 
-            <TextField
+            {/*<TextField
               fullWidth
               className={classes.textField}
               label="City"
@@ -171,9 +171,9 @@ class AddCinema extends Component {
               onChange={event =>
                 this.handleFieldChange('city', event.target.value)
               }
-            />
+            />*/}
           </div>
-          <div className={classes.field}>
+          {/*<div className={classes.field}>
             <FileUpload
               className={classes.textField}
               file={image}
@@ -182,12 +182,12 @@ class AddCinema extends Component {
                 this.handleFieldChange('image', file);
               }}
             />
-          </div>
+          </div>*/}
 
           <div className={classes.field}>
             <TextField
               className={classes.textField}
-              label="Ticket Price"
+              label="Precio por entrada"
               margin="dense"
               type="number"
               value={ticketPrice}
@@ -198,7 +198,7 @@ class AddCinema extends Component {
             />
             <TextField
               className={classes.textField}
-              label="Seats Available"
+              label="Asientos"
               margin="dense"
               required
               value={seatsAvailable}
@@ -224,7 +224,7 @@ class AddCinema extends Component {
             className={classes.buttonFooter}
             variant="contained"
             onClick={() => this.onSubmitAction('remove')}>
-            Delete Cinema
+            Borrar sala
           </Button>
         )}
 
