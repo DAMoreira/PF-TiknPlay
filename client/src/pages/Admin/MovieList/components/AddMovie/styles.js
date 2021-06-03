@@ -6,7 +6,7 @@ export default theme => ({
     display: 'flex'
   },
   textField: {
-    textTransform: 'capitalize',
+    textTransform: '',
     width: '100%',
     marginRight: theme.spacing(3)
   },

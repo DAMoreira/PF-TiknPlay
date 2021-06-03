@@ -38,10 +38,10 @@ const FileUpload = props => {
       />
       <label htmlFor="icon-button-file">
         <Button variant="outlined" className={classes.button} component="span">
-          Upload
+          Subir imagen
         </Button>
       </label>
-      <span>{file ? file.name : 'No file selected'}</span>
+      <span>{file ? file.name : 'Ninguna imagen seleccionada'}</span>
     </Paper>
   );
 };
