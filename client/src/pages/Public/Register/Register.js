@@ -75,15 +75,15 @@ class Register extends Component {
               <div className={classes.contentBody}>
                 <form className={classes.form}>
                   <Typography className={classes.title} variant="h2">
-                    Create new account
+                    Crear nuevo usuario
                   </Typography>
                   <Typography className={classes.subtitle} variant="body1">
-                    Use your email to create new account... it's free.
+                    {/*Use your email to create new account... it's free.*/}
                   </Typography>
                   <div className={classes.fields}>
                     <TextField
                       className={classes.textField}
-                      label="Full name"
+                      label="Nombre completo"
                       name="name"
                       value={values.name}
                       onChange={event =>
@@ -93,7 +93,7 @@ class Register extends Component {
                     />
                     <TextField
                       className={classes.textField}
-                      label="User name"
+                      label="Nombre de usuario"
                       name="username"
                       value={values.username}
                       onChange={event =>
@@ -103,7 +103,7 @@ class Register extends Component {
                     />
                     <TextField
                       className={classes.textField}
-                      label="Email address"
+                      label="Correo electrónico"
                       name="email"
                       value={values.email}
                       onChange={event =>
@@ -113,7 +113,7 @@ class Register extends Component {
                     />
                     <TextField
                       className={classes.textField}
-                      label="Mobile Phone"
+                      label="Teléfono"
                       name="phone"
                       value={values.phone}
                       variant="outlined"
@@ -123,7 +123,7 @@ class Register extends Component {
                     />
                     <TextField
                       className={classes.textField}
-                      label="Password"
+                      label="Contraseña"
                       type="password"
                       value={values.password}
                       variant="outlined"
@@ -131,14 +131,14 @@ class Register extends Component {
                         this.handleFieldChange('password', event.target.value)
                       }
                     />
-                    <FileUpload
+                    {/*<FileUpload
                       className={classes.upload}
                       file={values.image}
                       onUpload={event => {
                         const file = event.target.files[0];
                         this.handleFieldChange('image', file);
                       }}
-                    />
+                    />*/}
                     <div className={classes.policy}>
                       <Checkbox
                         checked={values.policy}
@@ -168,13 +168,13 @@ class Register extends Component {
                     onClick={this.handleRegister}
                     size="large"
                     variant="contained">
-                    Register now
+                    Registrarse
                   </Button>
 
                   <Typography className={classes.login} variant="body1">
-                    Have an account?{' '}
+                    Tienes una cuenta?{' '}
                     <Link className={classes.loginUrl} to="/login">
-                      Login
+                      Iniciar sesión
                     </Link>
                   </Typography>
                 </form>

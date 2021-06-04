@@ -65,8 +65,8 @@ class AddUser extends Component {
     const { name, username, email, password, role, phone } = this.state;
 
     const rootClassName = classNames(classes.root, className);
-    const title = selectedUser ? 'Edit User' : 'Add User';
-    const submitButton = selectedUser ? 'Update User' : 'Add User';
+    const title = selectedUser ? 'Modificar usuario' : 'Agregar usuario';
+    const submitButton = selectedUser ? 'Guardar cambios' : 'Guardar cambios';
     const submitAction = selectedUser
       ? () => this.onUpdateUser()
       : () => this.onAddUser();
@@ -82,7 +82,7 @@ class AddUser extends Component {
               fullWidth
               className={classes.textField}
               helperText="Especificar el nombre completo"
-              label="Full Name"
+              label="Nombre completo"
               margin="dense"
               required
               value={name}
@@ -94,7 +94,7 @@ class AddUser extends Component {
             <TextField
               fullWidth
               className={classes.textField}
-              label="Username"
+              label="Nombre de usuario"
               margin="dense"
               required
               value={username}
@@ -108,7 +108,7 @@ class AddUser extends Component {
             <TextField
               fullWidth
               className={classes.textField}
-              label="Email"
+              label="Correo electrónico"
               margin="dense"
               required
               value={email}
@@ -120,7 +120,7 @@ class AddUser extends Component {
             <TextField
               fullWidth
               className={classes.textField}
-              label="Password"
+              label="Contraseña"
               margin="dense"
               required
               value={password}
@@ -134,7 +134,7 @@ class AddUser extends Component {
             <TextField
               fullWidth
               className={classes.textField}
-              label="Phone"
+              label="Telefono"
               margin="dense"
               required
               value={phone}
@@ -147,8 +147,8 @@ class AddUser extends Component {
               fullWidth
               select
               className={classes.textField}
-              helperText="Admin or Guest"
-              label="Role"
+              helperText="Administrador o Cliente"
+              label="Rol"
               margin="dense"
               required
               value={role}

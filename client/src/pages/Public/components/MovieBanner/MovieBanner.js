@@ -46,12 +46,12 @@ function MovieBanner(props) {
                 </Typography>
               ))}
 
-              <StyledRating
+              {/*<StyledRating
                 value={4}
                 readOnly
                 size="small"
                 emptyIcon={<StarBorderIcon fontSize="inherit" />}
-              />
+              />*/}
             </Box>
           )}
           <Typography
@@ -66,8 +66,8 @@ function MovieBanner(props) {
             color="inherit">
             {textTruncate(movie.description, 450)}
           </Typography>
-          <Typography className={classes.director} variant="h4" color="inherit">
-            By: {movie.director}
+          <Typography style={{textTransform: 'capitalize'}} className={classes.director} variant="h4" color="inherit">
+            Dirigida por: {movie.director}
           </Typography>
           <Typography
             className={classes.duration}
@@ -75,9 +75,9 @@ function MovieBanner(props) {
             color="inherit">
             {movie.duration} min
           </Typography>
-          <Typography className={classes.genre} variant="body1" color="inherit">
+          {/*<Typography className={classes.genre} variant="body1" color="inherit">
             {movie.genre}
-          </Typography>
+              </Typography>*/}
         </header>
       </div>
       <div

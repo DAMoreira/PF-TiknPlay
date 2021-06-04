@@ -25,8 +25,9 @@ const MovieCard = props => {
             <Typography
               className={classes.director}
               variant="h4"
-              color="inherit">
-              By: {movie.director}
+              color="inherit"
+              style={{textTransform: 'capitalize'}}>
+              Dirigida por: {movie.director}
             </Typography>
             <Typography
               className={classes.duration}

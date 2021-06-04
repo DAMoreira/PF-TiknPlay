@@ -73,7 +73,7 @@ function MovieCarousel({ carouselClass, movies = [], title, to = null }) {
            :
           <Link to={to} style={{ textDecoration: 'none' }}>
           <Button className={classes.button} color="primary">
-            Explore All
+            Ver todo
           </Button>
         </Link>
       }

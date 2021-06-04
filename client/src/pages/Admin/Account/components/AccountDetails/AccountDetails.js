@@ -67,8 +67,8 @@ class Account extends Component {
       <Portlet className={rootClassName}>
         <PortletHeader>
           <PortletLabel
-            subtitle="The information can be edited"
-            title="Profile"
+            subtitle="La información puede ser editada"
+            title="Perfil"
           />
         </PortletHeader>
         <PortletContent noPadding>
@@ -77,7 +77,7 @@ class Account extends Component {
               <TextField
                 className={classes.textField}
                 helperText="Especificar el nombre completo"
-                label="FUll Name"
+                label="Nombre completo"
                 margin="dense"
                 required
                 value={name}
@@ -88,7 +88,7 @@ class Account extends Component {
               />
               <TextField
                 className={classes.textField}
-                label="Email Address"
+                label="Correo electrónico"
                 margin="dense"
                 required
                 value={email}
@@ -101,7 +101,7 @@ class Account extends Component {
             <div className={classes.field}>
               <TextField
                 className={classes.textField}
-                label="Phone Number"
+                label="Teléfono"
                 margin="dense"
                 type="number"
                 value={phone}
@@ -112,7 +112,7 @@ class Account extends Component {
               />
               <TextField
                 className={classes.textField}
-                label="Password"
+                label="Contraseña"
                 margin="dense"
                 type="password"
                 value={password}
@@ -129,7 +129,7 @@ class Account extends Component {
             color="primary"
             variant="contained"
             onClick={this.onUpdateUser}>
-            Save details
+            Guardar
           </Button>
         </PortletFooter>
       </Portlet>

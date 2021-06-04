@@ -72,11 +72,11 @@ class UsersTable extends Component {
                     }
                     onChange={onSelectAll}
                   />
-                  Name
+                  Nombre completo
                 </TableCell>
-                <TableCell align="left">Username</TableCell>
-                <TableCell align="left">Email</TableCell>
-                <TableCell align="left">Registration date</TableCell>
+                <TableCell align="left">Nombre de usuario</TableCell>
+                <TableCell align="left">Correo electrónico</TableCell>
+                <TableCell align="left">Fecha de registro</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -121,12 +121,12 @@ class UsersTable extends Component {
           </Table>
           <TablePagination
             backIconButtonProps={{
-              'aria-label': 'Previous Page'
+              'aria-label': 'Anterior'
             }}
             component="div"
             count={users.length}
             nextIconButtonProps={{
-              'aria-label': 'Next Page'
+              'aria-label': 'Siguiente'
             }}
             onChangePage={this.handleChangePage}
             onChangeRowsPerPage={this.handleChangeRowsPerPage}

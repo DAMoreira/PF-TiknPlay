@@ -91,10 +91,10 @@ function LoginForm(props) {
   return (
     <form className={classes.form}>
       <Typography className={classes.title} variant="h2">
-        Sign in
+        Iniciar Sesión
       </Typography>
 
-      <div className={classes.socialLogin}>
+      {/*<div className={classes.socialLogin}>
         <GoogleLogin
           clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
           onSuccess={googleLogin}
@@ -125,12 +125,12 @@ function LoginForm(props) {
           fields="name,email,picture"
           callback={facebookLogin}
         />
-      </div>
+            </div>*/}
 
       <div className={classes.fields}>
         <TextField
           className={classes.textField}
-          label="username"
+          label="Nombre de usuario"
           name="username"
           onChange={event => handleFieldChange(event)}
           type="text"
@@ -139,7 +139,7 @@ function LoginForm(props) {
         />
         <TextField
           className={classes.textField}
-          label="Password"
+          label="Contraseña"
           name="password"
           onChange={event => handleFieldChange(event)}
           type="password"
@@ -154,12 +154,12 @@ function LoginForm(props) {
         onClick={() => props.login(values.username, values.password)}
         size="large"
         variant="contained">
-        Login now
+        Iniciar sesión
       </Button>
       <Typography className={classes.register} variant="body1">
-        Don't have an account?
+        No tienes una cuenta?{' '}
         <Link className={classes.registerUrl} to="/register">
-          register
+          Registrarse
         </Link>
       </Typography>
     </form>

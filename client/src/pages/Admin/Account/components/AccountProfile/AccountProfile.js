@@ -28,13 +28,13 @@ class AccountProfile extends Component {
                 {user.email}
               </Typography>
               <Typography className={classes.dateText} variant="body1">
-                Join at: {moment(user.createdAt).format('DD/MM/YYYY')}
+                Usuario desde: {moment(user.createdAt).format('DD/MM/YYYY')}
               </Typography>
             </div>
-            <Avatar
+            {/*<Avatar
               className={classes.avatar}
               src={user.imageurl ? user.imageurl : '/images/avatars/avatar.png'}
-            />
+            />*/}
           </div>
         </PortletContent>
         <PortletFooter>
@@ -45,7 +45,7 @@ class AccountProfile extends Component {
             type="file"
             onChange={onUpload}
           />
-          <label htmlFor="icon-button-file">
+          {/*<label htmlFor="icon-button-file">
             <Button
               className={classes.uploadButton}
               component="span"
@@ -53,7 +53,7 @@ class AccountProfile extends Component {
               variant="text">
               Upload picture
             </Button>
-          </label>
+    </label>*/}
           <span>{file && file.name}</span>
         </PortletFooter>
       </Portlet>
