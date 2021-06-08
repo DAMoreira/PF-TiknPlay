@@ -43,15 +43,16 @@ class Topbar extends Component {
       <div className={`${classes.root} , ${ToolbarClasses}`}>
         <Toolbar className={classes.toolbar}>
           <div className={classes.brandWrapper}>
-            <NavLink className={classes.logo} to="/">
-              Tik&Play
-            </NavLink>
             <IconButton
               className={classes.menuButton}
               aria-label="Menu"
               onClick={onToggleSidebar}>
               {isSidebarOpen ? <CloseIcon /> : <MenuIcon />}
             </IconButton>
+            <NavLink className={classes.logo} to="/">
+              Tik&Play
+            </NavLink>
+
           </div>
 
 
