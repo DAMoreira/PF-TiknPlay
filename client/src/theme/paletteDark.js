@@ -52,8 +52,8 @@ export default {
   },
   background: {
     paper: 'rgb(45, 45, 45)',
-    default: 'rgb(26, 26, 26)',
-    dark: 'rgb(26, 26, 26)'
+    default: 'rgb(27, 40, 56)',
+    dark: 'rgb(27, 40, 56)'
   },
   border: '#DFE3E8',
   divider: '#DFE3E8',
