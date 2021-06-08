@@ -60,9 +60,9 @@ class Topbar extends Component {
           <IconButton
             className={classes.notificationsButton}
             onClick={() => console.log('Notification')}>
-            <Badge badgeContent={4} color="primary" variant="dot">
+            {/*<Badge badgeContent={4} color="primary" variant="dot">
               <NotificationsIcon />
-            </Badge>
+            </Badge>*/}
           </IconButton>
           <IconButton
             className={classes.signOutButton}
