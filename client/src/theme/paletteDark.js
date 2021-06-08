@@ -14,10 +14,10 @@ export default {
   },
   default: {
     light: 'rgba(41, 150, 243, .1)',
-    main: 'rgba(0, 40, 73, .9)',
-    dark: 'rgb(0, 40, 73)',
+    main: 'rgba(20, 30, 40, .9)',
+    dark: 'rgb(20, 30, 40)',
     logoBg: 'rgb(51, 51, 51)',
-    border: 'rgba(0, 40, 73, .1)',
+    border: 'rgba(20, 30, 40, .1)',
     contrastText: white
   },
   primary: {
@@ -52,8 +52,8 @@ export default {
   },
   background: {
     paper: 'rgb(45, 45, 45)',
-    default: 'rgb(27, 40, 56)',
-    dark: 'rgb(27, 40, 56)'
+    default: 'rgb(20, 30, 40)',
+    dark: 'rgb(20, 30, 40)'
   },
   border: '#DFE3E8',
   divider: '#DFE3E8',

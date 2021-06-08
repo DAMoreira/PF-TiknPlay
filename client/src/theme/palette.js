@@ -14,10 +14,10 @@ export default {
   },
   default: {
     light: 'rgba(41, 150, 243, .1)',
-    main: 'rgba(0, 40, 73, .9)',
-    dark: 'rgb(0, 40, 73)',
+    main: 'rgba(20, 30, 40, .9)',
+    dark: 'rgb(20, 30, 40)',
     logoBg: 'rgb(51, 51, 51)',
-    border: 'rgba(0, 40, 73, .1)',
+    border: 'rgba(20, 30, 40, .1)',
     contrastText: white
   },
   primary: {
