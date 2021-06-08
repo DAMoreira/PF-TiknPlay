@@ -36,21 +36,20 @@ export default function BookingInvitation(props) {
     <div className={classes.root}>
       <Paper className={classes.paper}>
         <Typography variant="h4" align="center">
-          Guest Invitation
+          Descargue sus reservas
         </Typography>
         <Typography
           className={classes.successInfo}
           variant="body1"
           align="center">
-          You have successfuly booked your seats. Please fill the emails below,
-          to send invitations to your friends!
+          Tu reserva se ha realizado con exito! Comproba tu correo electronico para obtener tu codigo QR.
         </Typography>
         <Box width={1} textAlign="center">
           <Button
             color="primary"
             variant="outlined"
             onClick={() => onDownloadPDF()}>
-            Download Pass
+            Descargar codigo
           </Button>
         </Box>
         <Grid className={classes.gridContainer} container spacing={3}>
@@ -80,7 +79,7 @@ export default function BookingInvitation(props) {
                 color="primary"
                 variant="outlined"
                 onClick={() => sendInvitations()}>
-                Send Invitations
+                Enviar invitaciones
               </Button>
             </Grid>
             <Grid item>
@@ -89,7 +88,7 @@ export default function BookingInvitation(props) {
                 color="secondary"
                 variant="outlined"
                 onClick={() => ignore()}>
-                Ignore
+                Ignorar
               </Button>
             </Grid>
           </Grid>
