@@ -38,7 +38,7 @@ class Navbar extends Component {
           })}>
           <Link className={classes.logoLink} to="/">
             <Typography className={classes.logo} variant="h2">
-              <img src="https://i.postimg.cc/SxzHHPjr/6.png" width="120" ></img>
+            <img src="https://i.postimg.cc/SxzHHPjr/6.png" className={classes.logo}></img>
             </Typography>
           </Link>
           <div className={classes.navLinks}>

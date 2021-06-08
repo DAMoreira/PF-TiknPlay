@@ -4,7 +4,7 @@ export default theme => ({
     top: 0,
     left: 0,
     width: '100%',
-    padding: '1.25rem 20px',
+    padding: '0.25rem 20px',
     display: 'flex',
     flexWrap: 'wrap',
     alignItems: 'center',
@@ -29,7 +29,7 @@ export default theme => ({
     textDecoration: 'none'
   },
   logo: {
-    maxHeight: '2.4rem',
+    maxHeight: '3.5rem',
     width: 'auto',
     fontSize: '2rem',
     letterSpacing: '1px',
@@ -71,7 +71,7 @@ export default theme => ({
   navIcon: {
     display: 'none',
     height: '30px',
-    width: '30px',
+    width: '310px',
     position: 'relative',
     zIndex: 2,
     cursor: 'pointer',
