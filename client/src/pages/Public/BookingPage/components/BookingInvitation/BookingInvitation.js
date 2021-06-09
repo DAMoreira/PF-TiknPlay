@@ -14,6 +14,9 @@ const useStyles = makeStyles(theme => ({
   successInfo: { margin: theme.spacing(3) },
   ignoreButton: {
     marginLeft: theme.spacing(3)
+  },
+  image: {
+    marginBottom: theme.spacing(3)
   }
 }));
 
@@ -27,7 +30,8 @@ export default function BookingInvitation(props) {
     ignore,
     invitations,
     onSetInvitation,
-    onDownloadPDF
+    onDownloadPDF,
+    getQR
   } = props;
 
   const notValidInvitations = !Object.keys(invitations).length;
@@ -44,7 +48,8 @@ export default function BookingInvitation(props) {
           align="center">
           Tu reserva se ha realizado con exito! Comproba tu correo electronico para obtener tu codigo QR.
         </Typography>
-        <Box width={1} textAlign="center">
+        <div className={classes.image} align="center"><img src={getQR()}></img></div>
+        <Box width={1} textAlign="center" spacing={3}>
           <Button
             color="primary"
             variant="outlined"
@@ -52,7 +57,7 @@ export default function BookingInvitation(props) {
             Descargar codigo
           </Button>
         </Box>
-        <Grid className={classes.gridContainer} container spacing={3}>
+        {/*<Grid className={classes.gridContainer} container spacing={3}>
           {selectedSeats.map((seat, index) => (
             <Grid item xs={12} md={6} lg={4} key={'seat-' + index}>
               <TextField
@@ -92,7 +97,7 @@ export default function BookingInvitation(props) {
               </Button>
             </Grid>
           </Grid>
-        </Grid>
+              </Grid>*/}
       </Paper>
     </div>
   );

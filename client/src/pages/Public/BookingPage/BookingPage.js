@@ -86,6 +86,11 @@ class BookingPage extends Component {
     doc.save(`${movie.title}-${cinema.name}.pdf`);
   };
 
+  getQR = () => {
+    const { QRCode } = this.props;
+    return QRCode
+  };
+
   onSelectSeat = (row, seat) => {
     const { cinema, setSelectedSeats } = this.props;
     const seats = [...cinema.seats];
@@ -361,7 +366,7 @@ class BookingPage extends Component {
       setInvitation,
       resetCheckout,
       suggestedSeats,
-      suggestedSeat
+      suggestedSeat,
     } = this.props;
     const { uniqueCinemas, uniqueTimes } = this.onFilterCinema();
     let seats = this.onGetReservedSeats();
@@ -397,6 +402,7 @@ class BookingPage extends Component {
                 invitations={invitations}
                 onSetInvitation={setInvitation}
                 onDownloadPDF={this.jsPdfGenerator}
+                getQR={this.getQR}
               />
             )}
 
