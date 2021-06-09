@@ -62,12 +62,12 @@ class ReservationsTable extends Component {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell align="left">Movie</TableCell>
-                <TableCell align="left">Cinema</TableCell>
-                <TableCell align="left">Date</TableCell>
-                <TableCell align="left">Start At</TableCell>
-                <TableCell align="left">Ticket Price</TableCell>
-                <TableCell align="left">Total</TableCell>
+                <TableCell align="left">Película</TableCell>
+                <TableCell align="left">Sala</TableCell>
+                <TableCell align="left">Fecha</TableCell>
+                <TableCell align="left">Horario</TableCell>
+                <TableCell align="left">Precio de la entrada</TableCell>
+                <TableCell align="left">Precio total</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -91,10 +91,10 @@ class ReservationsTable extends Component {
                       {reservation.startAt}
                     </TableCell>
                     <TableCell className={classes.tableCell}>
-                      {reservation.ticketPrice}
+                    <span>&#36;</span> {reservation.ticketPrice}
                     </TableCell>
                     <TableCell className={classes.tableCell}>
-                      {reservation.total}
+                    <span>&#36;</span> {reservation.total}
                     </TableCell>
                   </TableRow>
                 ))}
@@ -102,12 +102,12 @@ class ReservationsTable extends Component {
           </Table>
           <TablePagination
             backIconButtonProps={{
-              'aria-label': 'Previous Page'
+              'aria-label': 'Siguiente'
             }}
             component="div"
             count={reservations.length}
             nextIconButtonProps={{
-              'aria-label': 'Next Page'
+              'aria-label': 'Anterior'
             }}
             onChangePage={this.handleChangePage}
             onChangeRowsPerPage={this.handleChangeRowsPerPage}

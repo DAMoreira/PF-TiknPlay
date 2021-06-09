@@ -48,6 +48,12 @@ export default function BookingInvitation(props) {
           align="center">
           Tu reserva se ha realizado con exito! Comproba tu correo electronico para obtener tu codigo QR.
         </Typography>
+        <Typography
+          className={classes.successInfo}
+          variant="body1"
+          align="center">
+          Asientos reservados: {selectedSeats}
+        </Typography>
         <div className={classes.image} align="center"><img src={getQR()}></img></div>
         <Box width={1} textAlign="center" spacing={3}>
           <Button

@@ -71,7 +71,7 @@ class Navbar extends Component {
                       {
                         user.role !== 'guest'
                           ? "Panel de Control"
-                          : "Mis reservas"
+                          : "Mi perfil"
                       }
                     </Link>
                   </ListItem>

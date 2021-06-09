@@ -32,7 +32,7 @@ export default function BookingForm(props) {
         alignItems="center"
         justifyContent="center">
         <Typography align="center" variant="h2" color="inherit">
-          No Cinema Available.
+          No hay salas disponibles
         </Typography>
       </Box>
     );
