@@ -63,8 +63,8 @@ export default function BookingInvitation(props) {
             Descargar codigo
           </Button>
         </Box>
-        {/*<Grid className={classes.gridContainer} container spacing={3}>
-          {selectedSeats.map((seat, index) => (
+        <Grid className={classes.gridContainer} container spacing={3}>
+          {/*{selectedSeats.map((seat, index) => (
             <Grid item xs={12} md={6} lg={4} key={'seat-' + index}>
               <TextField
                 fullWidth
@@ -92,18 +92,18 @@ export default function BookingInvitation(props) {
                 onClick={() => sendInvitations()}>
                 Enviar invitaciones
               </Button>
-            </Grid>
+            </Grid>*/}
             <Grid item>
               <Button
                 className={classes.ignoreButton}
                 color="secondary"
                 variant="outlined"
                 onClick={() => ignore()}>
-                Ignorar
+                Cerrar
               </Button>
             </Grid>
-          </Grid>
-              </Grid>*/}
+         {/* </Grid>*/}
+              </Grid>
       </Paper>
     </div>
   );
