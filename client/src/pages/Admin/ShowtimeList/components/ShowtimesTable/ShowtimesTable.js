@@ -45,6 +45,11 @@ class ShowtimesTable extends Component {
     this.setState({ rowsPerPage: event.target.value });
   };
 
+  onFindAttr = (id, list, attr) => {
+    const item = list.find(item => item._id === id);
+    return item ? item[attr] : `Not ${attr} Found`;
+  };
+
   render() {
     const {
       classes,
@@ -52,7 +57,9 @@ class ShowtimesTable extends Component {
       showtimes,
       onSelectShowtime,
       selectedShowtimes,
-      selectAllShowtimes
+      selectAllShowtimes,
+      movies,
+      cinemas
     } = this.props;
     const { rowsPerPage, page } = this.state;
 
@@ -112,10 +119,10 @@ class ShowtimesTable extends Component {
                       </div>
                     </TableCell>
                     <TableCell className={classes.tableCell}>
-                      {showtime.movieId}
+                      {this.onFindAttr(showtime.movieId, movies, 'title')}
                     </TableCell>
                     <TableCell className={classes.tableCell}>
-                      {showtime.cinemaId}
+                      {this.onFindAttr(showtime.cinemaId, cinemas, 'name')}
                     </TableCell>
                     <TableCell className={classes.tableCell}>
                       {moment(showtime.startDate).format('DD/MM/YYYY')}
