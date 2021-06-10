@@ -20,8 +20,27 @@ export default function BookingForm(props) {
   } = props;
 
   const showtime = showtimes.find(
-    showtime => showtime.cinemaId === selectedCinema
+    showtime => (showtime.endDate >= selectedDate) && (showtime.startDate <= selectedDate)
   );
+
+  var maxDate = new Date();
+  var minDate = new Date();
+
+  const sortedStart = showtimes.sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
+  const sortedEnd = showtimes.sort((a, b) => new Date(a.endDate) - new Date(b.endDate));
+
+  minDate = sortedStart.reverse()[0];
+  maxDate = sortedEnd[0];
+
+  function todayOrMin(min) {
+    var exit = new Date();
+    new Date(min.startDate) < new Date()
+      ?
+      exit = new Date()
+      :
+      exit = new Date(min.startDate)
+    return exit;
+  };
 
   if (!cinemas.length)
     return (
@@ -39,22 +58,7 @@ export default function BookingForm(props) {
 
   return (
     <Grid container spacing={3}>
-      <Grid item xs>
-        <TextField
-          fullWidth
-          select
-          value={selectedCinema}
-          label="Seleccionar sala"
-          variant="outlined"
-          onChange={onChangeCinema}>
-          {cinemas.map(cinema => (
-            <MenuItem key={cinema._id} value={cinema._id}>
-              {cinema.name}
-            </MenuItem>
-          ))}
-        </TextField>
-      </Grid>
-      {showtime && (
+      {(
         <Grid item xs>
           <MuiPickersUtilsProvider utils={MomentUtils}>
             <KeyboardDatePicker
@@ -63,8 +67,8 @@ export default function BookingForm(props) {
               fullWidth
               id="start-date"
               label="Fecha"
-              minDate={new Date(showtime.startDate)}
-              maxDate={new Date(showtime.endDate)}
+              minDate={todayOrMin(minDate)}
+              maxDate={new Date(maxDate.endDate)}
               value={selectedDate}
               onChange={date => onChangeDate(date._d)}
               KeyboardButtonProps={{
@@ -91,6 +95,21 @@ export default function BookingForm(props) {
           </TextField>
         </Grid>
       )}
+      {selectedTime && <Grid item xs>
+        <TextField
+          fullWidth
+          select
+          value={selectedCinema}
+          label="Seleccionar sala"
+          variant="outlined"
+          onChange={onChangeCinema}>
+          {cinemas.map(cinema => (
+            <MenuItem key={cinema._id} value={cinema._id}>
+              {cinema.name}
+            </MenuItem>
+          ))}
+        </TextField>
+      </Grid>}
     </Grid>
   );
 }
