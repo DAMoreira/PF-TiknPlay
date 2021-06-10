@@ -47,7 +47,7 @@ function MyDashboard(props) {
   return (
     <Container>
       <Grid container spacing={2}>
-        {!!myReservations.length && (
+        {/*{!!myReservations.length && (
           <>
             <Grid item xs={12}>
               <Typography
@@ -65,14 +65,13 @@ function MyDashboard(props) {
               />
             </Grid>
           </>
-        )}
+        )}*/}
         <Grid item xs={12}>
-          <Typography className={classes.title} variant="h2" color="inherit">
-            Mi perfil
-          </Typography>
-        </Grid>
-        <Grid item xs={12}>
-          <Account />
+          <Account
+          reservations={myReservations}
+          movies={movies}
+          cinemas={cinemas} 
+          />
         </Grid>
       </Grid>
     </Container>

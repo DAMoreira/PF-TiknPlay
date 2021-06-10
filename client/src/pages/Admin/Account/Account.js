@@ -2,14 +2,31 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core';
-import { Grid } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 import { AccountProfile, AccountDetails } from './components';
 import { uploadImage } from '../../../store/actions';
+import { MyReservationTable } from '../../Public/MyDashboard/components';
 
 // Component styles
 const styles = theme => ({
   root: {
     padding: theme.spacing(4)
+  },
+  title: {
+    fontSize: '3rem',
+    lineHeight: '3rem',
+    textAlign: 'center',
+    textTransform: 'capitalize',
+    //marginTop: theme.spacing(15),
+    marginBottom: theme.spacing(3)
+  },
+  title2: {
+    fontSize: '3rem',
+    lineHeight: '3rem',
+    textAlign: 'center',
+    textTransform: 'capitalize',
+    marginTop: theme.spacing(15),
+    marginBottom: theme.spacing(3)
   }
 });
 
@@ -23,10 +40,23 @@ class Account extends Component {
 
   render() {
     const { image } = this.state;
-    const { classes, user, uploadImage } = this.props;
+    const { classes, user, uploadImage, reservations, movies, cinemas  } = this.props;
     return (
       <div className={classes.root}>
         <Grid container spacing={4}>
+          <Grid item xs={12}>
+          {
+            user.role !== 'guest'
+              ? 
+                <Typography className={classes.title} variant="h2" color="inherit">
+                  Mi perfil
+                </Typography>
+              : 
+                <Typography className={classes.title2} variant="h2" color="inherit">
+                  Mi perfil
+                </Typography>
+          }
+          </Grid>
           <Grid item lg={4} md={6} xl={4} xs={12}>
             <AccountProfile
               file={image}
@@ -44,6 +74,21 @@ class Account extends Component {
               uploadImage={uploadImage}
             />
           </Grid>
+          <Grid item xs={12}>
+              <Typography
+                className={classes.title2}
+                variant="h2"
+                color="inherit">
+                Mis reservas
+              </Typography>
+            </Grid>
+          <Grid item xs={12}>
+              <MyReservationTable
+                reservations={reservations}
+                movies={movies}
+                cinemas={cinemas}
+              />
+            </Grid>
         </Grid>
       </div>
     );
@@ -54,8 +99,16 @@ Account.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-const mapStateToProps = ({ authState }) => ({
-  user: authState.user
+const mapStateToProps = ({ 
+  authState, 
+  movieState,
+  reservationState,
+  cinemaState 
+}) => ({
+  user: authState.user,
+  movies: movieState.movies,
+  reservations: reservationState.reservations,
+  cinemas: cinemaState.cinemas
 });
 export default connect(mapStateToProps, { uploadImage })(
   withStyles(styles)(Account)
