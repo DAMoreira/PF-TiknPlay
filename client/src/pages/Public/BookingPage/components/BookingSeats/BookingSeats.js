@@ -18,6 +18,14 @@ const useStyles = makeStyles(theme => ({
       background: 'rgb(120, 205, 4)'
     }
   },
+  seatReservado: {
+    cursor: 'pointer',
+    color: 'rgba(255,255,255,0.7)',
+    borderRadius: 2,
+    padding: theme.spacing(2),
+    margin: theme.spacing(0.5),
+    fontWeight: 600
+  },
   seatInfoContainer: {
     width: '50%',
     margin: 'auto',
@@ -54,6 +62,7 @@ export default function BookingSeats(props) {
           seats.map((seatRows, indexRow) => (
             <div key={indexRow} className={classes.row}>
               {seatRows.map((seat, index) => (
+                seat !== 1 ?
                 <Box
                   key={`seat-${index}`}
                   onClick={() => onSelectSeat(indexRow, index)}
@@ -63,8 +72,19 @@ export default function BookingSeats(props) {
                       ? 'rgb(65, 66, 70)'
                       : seat === 2
                       ? 'rgb(120, 205, 4)'
-                      : seat === 3
-                      ? 'rgb(14, 151, 218)'
+                      : 'rgb(96, 93, 169)'
+                  }>
+                  {index + 1}
+                </Box>
+                :
+                <Box
+                  key={`seat-${index}`}
+                  className={classes.seatReservado}
+                  bgcolor={
+                    seat === 1
+                      ? 'rgb(65, 66, 70)'
+                      : seat === 2
+                      ? 'rgb(120, 205, 4)'
                       : 'rgb(96, 93, 169)'
                   }>
                   {index + 1}
