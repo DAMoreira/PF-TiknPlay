@@ -19,7 +19,6 @@ const useStyles = makeStyles(theme => ({
     }
   },
   seatReservado: {
-    cursor: 'pointer',
     color: 'rgba(255,255,255,0.7)',
     borderRadius: 2,
     padding: theme.spacing(2),
