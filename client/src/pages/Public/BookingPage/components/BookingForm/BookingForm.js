@@ -14,20 +14,21 @@ export default function BookingForm(props) {
     onChangeCinema,
     selectedDate,
     onChangeDate,
-    times,
     selectedTime,
     onChangeTime
   } = props;
 
-  const showtime = showtimes.find(
-    showtime => (showtime.endDate >= selectedDate) && (showtime.startDate <= selectedDate)
-  );
+
 
   var maxDate = new Date();
   var minDate = new Date();
 
-  const sortedStart = showtimes.sort((a, b) => new Date(a.startDate) - new Date(b.startDate));
-  const sortedEnd = showtimes.sort((a, b) => new Date(a.endDate) - new Date(b.endDate));
+  const sortedStart = showtimes.sort(
+    (a, b) => new Date(a.startDate) - new Date(b.startDate)
+  );
+  const sortedEnd = showtimes.sort(
+    (a, b) => new Date(a.endDate) - new Date(b.endDate)
+  );
 
   minDate = sortedStart.reverse()[0];
   maxDate = sortedEnd[0];
@@ -35,12 +36,24 @@ export default function BookingForm(props) {
   function todayOrMin(min) {
     var exit = new Date();
     new Date(min.startDate) < new Date()
-      ?
-      exit = new Date()
-      :
-      exit = new Date(min.startDate)
+      ? (exit = new Date())
+      : (exit = new Date(min.startDate));
     return exit;
-  };
+  }
+
+  function uniqueTimes(selectedDate) {
+    return showtimes
+      .filter(
+        showtime =>
+          new Date(showtime.startDate) <= new Date(selectedDate) &&
+          new Date(showtime.endDate) >= new Date(selectedDate)
+      )
+      .map(showtime => showtime.startAt)
+      .filter((value, index, self) => self.indexOf(value) === index)
+      .sort(
+        (a, b) => new Date('1970/01/01 ' + a) - new Date('1970/01/01 ' + b)
+      );
+  }
 
   if (!cinemas.length)
     return (
@@ -58,7 +71,7 @@ export default function BookingForm(props) {
 
   return (
     <Grid container spacing={3}>
-      {(
+      {
         <Grid item xs>
           <MuiPickersUtilsProvider utils={MomentUtils}>
             <KeyboardDatePicker
@@ -77,7 +90,7 @@ export default function BookingForm(props) {
             />
           </MuiPickersUtilsProvider>
         </Grid>
-      )}
+      }
       {selectedDate && (
         <Grid item xs>
           <TextField
@@ -87,7 +100,7 @@ export default function BookingForm(props) {
             label="Horario"
             variant="outlined"
             onChange={onChangeTime}>
-            {times.map((time, index) => (
+            {uniqueTimes(selectedDate).map((time, index) => (
               <MenuItem key={time + '-' + index} value={time}>
                 {time}
               </MenuItem>
@@ -95,21 +108,23 @@ export default function BookingForm(props) {
           </TextField>
         </Grid>
       )}
-      {selectedTime && <Grid item xs>
-        <TextField
-          fullWidth
-          select
-          value={selectedCinema}
-          label="Seleccionar sala"
-          variant="outlined"
-          onChange={onChangeCinema}>
-          {cinemas.map(cinema => (
-            <MenuItem key={cinema._id} value={cinema._id}>
-              {cinema.name}
-            </MenuItem>
-          ))}
-        </TextField>
-      </Grid>}
+      {selectedTime && (
+        <Grid item xs>
+          <TextField
+            fullWidth
+            select
+            value={selectedCinema}
+            label="Seleccionar sala"
+            variant="outlined"
+            onChange={onChangeCinema}>
+            {cinemas.map(cinema => (
+              <MenuItem key={cinema._id} value={cinema._id}>
+                {cinema.name}
+              </MenuItem>
+            ))}
+          </TextField>
+        </Grid>
+      )}
     </Grid>
   );
 }
