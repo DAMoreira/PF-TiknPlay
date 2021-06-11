@@ -8,6 +8,13 @@ import styles from './styles';
 import { textTruncate } from '../../../../utils';
 import { Link } from 'react-router-dom';
 
+const convertFirstCharacterToUppercase = stringToConvert => {
+  var firstCharacter = stringToConvert.substring(0, 1);
+  var restString = stringToConvert.substring(1);
+
+  return firstCharacter.toUpperCase() + restString;
+};
+
 const MovieCard = props => {
   const { classes, movie } = props;
 
@@ -26,7 +33,7 @@ const MovieCard = props => {
               className={classes.director}
               variant="h4"
               color="inherit"
-              style={{textTransform: 'capitalize'}}>
+              style={{ textTransform: 'capitalize' }}>
               Dirigida por: {movie.director}
             </Typography>
             <Typography
@@ -36,10 +43,11 @@ const MovieCard = props => {
               {movie.duration} min
             </Typography>
             <Typography
+              style={{ textTransform: 'capitalize' }}
               className={classes.genre}
               variant="body1"
               color="inherit">
-              {movie.genre}
+              {movie.genre.replaceAll(',',', ')}
             </Typography>
           </header>
 
@@ -48,7 +56,9 @@ const MovieCard = props => {
               className={classes.descriptionText}
               variant="body1"
               color="inherit">
-              {textTruncate(movie.description, 250)}
+              {convertFirstCharacterToUppercase(
+                textTruncate(movie.description, 250)
+              )}
             </Typography>
           </div>
           {/* <div className={classes.footer}>

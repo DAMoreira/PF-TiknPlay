@@ -39,7 +39,8 @@ const useStyles = makeStyles(theme => ({
   },
   infoBox: {
     color: theme.palette.common.white,
-    marginBottom: theme.spacing(2)
+    marginBottom: theme.spacing(2),
+    textTransform: 'capitalize'
   },
   [theme.breakpoints.down('md')]: {
     movieInfos: { minHeight: '30vh' },

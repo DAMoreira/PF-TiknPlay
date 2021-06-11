@@ -16,6 +16,12 @@ import styles from './styles';
 
 const useStyles = makeStyles(styles);
 
+const convertFirstCharacterToUppercase = stringToConvert => {
+  var firstCharacter = stringToConvert.substring(0, 1);
+  var restString = stringToConvert.substring(1);
+
+  return firstCharacter.toUpperCase() + restString;
+};
 const StyledRating = withStyles({
   iconFilled: {
     color: '#fff'
@@ -38,6 +44,7 @@ function MovieBanner(props) {
             <Box mb={3} display="flex" alignItems="center" flexWrap="wrap">
               {movie.genre.split(',').map((genre, index) => (
                 <Typography
+                  style={{ textTransform: 'capitalize' }}
                   key={`${genre}-${index}`}
                   className={classes.tag}
                   variant="body1"
@@ -64,9 +71,15 @@ function MovieBanner(props) {
             className={classes.descriptionText}
             variant="body1"
             color="inherit">
-            {textTruncate(movie.description, 450)}
+            {convertFirstCharacterToUppercase(
+              textTruncate(movie.description, 450)
+            )}
           </Typography>
-          <Typography style={{textTransform: 'capitalize'}} className={classes.director} variant="h4" color="inherit">
+          <Typography
+            style={{ textTransform: 'capitalize' }}
+            className={classes.director}
+            variant="h4"
+            color="inherit">
             Dirigida por: {movie.director}
           </Typography>
           <Typography
