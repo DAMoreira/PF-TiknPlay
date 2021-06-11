@@ -64,6 +64,7 @@ class ReservationsTable extends Component {
               <TableRow>
                 <TableCell align="left">Usuario</TableCell>
                 <TableCell align="left">Teléfono</TableCell>
+                <TableCell align="left">Fecha</TableCell>
                 <TableCell align="left">Horario</TableCell>
                 <TableCell align="left">Película</TableCell>
                 <TableCell align="left">Sala</TableCell>
@@ -88,9 +89,11 @@ class ReservationsTable extends Component {
                       {reservation.phone}
                     </TableCell>
                     <TableCell className={classes.tableCell}>
+                      {new Date(reservation.date).toLocaleDateString()}
+                    </TableCell>
+                    <TableCell className={classes.tableCell}>
                       {reservation.startAt}
                     </TableCell>
-
                     <TableCell className={classes.tableCell}>
                       {this.onFindAttr(reservation.movieId, movies, 'title')}
                     </TableCell>
