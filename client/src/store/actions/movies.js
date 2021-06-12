@@ -12,7 +12,7 @@ export const uploadMovieImage = (id, image) => async dispatch => {
     });
     const responseData = await response.json();
     if (response.ok) {
-      dispatch(setAlert('Image Uploaded', 'success', 5000));
+      dispatch(setAlert('La imagen ha sido cargada', 'success', 5000));
     }
     if (responseData.error) {
       dispatch(setAlert(responseData.error.message, 'error', 5000));
@@ -89,7 +89,7 @@ export const addMovie = (image, newMovie) => async dispatch => {
     });
     const movie = await response.json();
     if (response.ok) {
-      dispatch(setAlert('Movie have been saved!', 'success', 5000));
+      dispatch(setAlert('La película ha sido creada!', 'success', 5000));
       if (image) dispatch(uploadMovieImage(movie._id, image));
       dispatch(getMovies());
     }
@@ -112,7 +112,7 @@ export const updateMovie = (movieId, movie, image) => async dispatch => {
     });
     if (response.ok) {
       dispatch(onSelectMovie(null));
-      dispatch(setAlert('Movie have been saved!', 'success', 5000));
+      dispatch(setAlert('Cambios guardados!', 'success', 5000));
       if (image) dispatch(uploadMovieImage(movieId, image));
       dispatch(getMovies());
     }
@@ -135,7 +135,7 @@ export const removeMovie = movieId => async dispatch => {
     if (response.ok) {
       dispatch(getMovies());
       dispatch(onSelectMovie(null));
-      dispatch(setAlert('Movie have been Deleted!', 'success', 5000));
+      dispatch(setAlert('Has borrado la película!', 'success', 5000));
     }
   } catch (error) {
     dispatch(setAlert(error.message, 'error', 5000));

@@ -68,7 +68,7 @@ export const createCinemas = (image, newCinema) => async dispatch => {
     });
     const cinema = await response.json();
     if (response.ok) {
-      dispatch(setAlert('Cinema Created', 'success', 5000));
+      dispatch(setAlert('Sala creada con éxito', 'success', 5000));
       if (image) dispatch(uploadCinemaImage(cinema._id, image));
       dispatch(getCinemas());
       return { status: 'success', message: 'Cinema Created' };
@@ -95,7 +95,7 @@ export const updateCinemas = (image, cinema, id) => async dispatch => {
       body: JSON.stringify(cinema)
     });
     if (response.ok) {
-      dispatch(setAlert('Cinema Updated', 'success', 5000));
+      dispatch(setAlert('Sala modificada con éxito', 'success', 5000));
       if (image) dispatch(uploadCinemaImage(id, image));
       return { status: 'success', message: 'Cinema Updated' };
     }
@@ -120,7 +120,7 @@ export const removeCinemas = id => async dispatch => {
       }
     });
     if (response.ok) {
-      dispatch(setAlert('Cinema Deleted', 'success', 5000));
+      dispatch(setAlert('Sala eliminada con éxito', 'success', 5000));
       return { status: 'success', message: 'Cinema Removed' };
     }
   } catch (error) {
