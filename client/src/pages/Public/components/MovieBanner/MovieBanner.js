@@ -88,6 +88,12 @@ function MovieBanner(props) {
             color="inherit">
             {movie.duration} min
           </Typography>
+          <Typography
+            className={classes.language}
+            variant="body1"
+            color="inherit">
+            {movie.language}
+          </Typography>
           {/*<Typography className={classes.genre} variant="body1" color="inherit">
             {movie.genre}
               </Typography>*/}

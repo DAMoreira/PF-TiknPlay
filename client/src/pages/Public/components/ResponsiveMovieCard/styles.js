@@ -48,7 +48,7 @@ export default theme => ({
     color: '#cee4fd',
     marginTop: theme.spacing(1)
   },
-  idioma: {
+  language: {
     display: 'inline-block',
     color: '#cee4fd',
     marginLeft: theme.spacing(2)

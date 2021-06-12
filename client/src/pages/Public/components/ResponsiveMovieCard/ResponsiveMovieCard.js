@@ -44,10 +44,10 @@ const MovieCard = props => {
             </Typography>
             <Typography
               style={{ textTransform: 'capitalize'}}
-              className={classes.idioma}
+              className={classes.language}
               variant="body1"
               color="inherit">
-              Ingles
+              {movie.language}
             </Typography>
             <Typography
               style={{ textTransform: 'capitalize'}}
