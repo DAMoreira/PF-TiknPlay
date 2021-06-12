@@ -48,7 +48,7 @@ export const addShowtime = showtime => async dispatch => {
       body: JSON.stringify(showtime)
     });
     if (response.ok) {
-      dispatch(setAlert('Showtime Created', 'success', 5000));
+      dispatch(setAlert('Función creada exitosamente!', 'success', 5000));
       return { status: 'success', message: 'Showtime Created' };
     }
   } catch (error) {
@@ -73,7 +73,7 @@ export const updateShowtime = (showtime, id) => async dispatch => {
       body: JSON.stringify(showtime)
     });
     if (response.ok) {
-      dispatch(setAlert('Showtime Created', 'success', 5000));
+      dispatch(setAlert('Función modificada con éxito', 'success', 5000));
       return { status: 'success', message: 'Showtime Created' };
     }
   } catch (error) {
@@ -98,7 +98,7 @@ export const deleteShowtime = id => async dispatch => {
     });
     if (response.ok) {
       dispatch({ type: DELETE_SHOWTIME, payload: id });
-      dispatch(setAlert('Showtime Deleted', 'success', 5000));
+      dispatch(setAlert('Función eliminada con éxito', 'success', 5000));
       dispatch(getShowtimes());
       return { status: 'success', message: 'Showtime Removed' };
     }

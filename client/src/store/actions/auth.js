@@ -136,7 +136,7 @@ export const register = ({
       user && setUser(user);
       if (image) dispatch(uploadImage(user._id, image)); // Upload image
       dispatch({ type: REGISTER_SUCCESS, payload: responseData });
-      dispatch(setAlert('Register Success', 'success', 5000));
+      dispatch(setAlert('Registro con éxito', 'success', 5000));
     }
     if (responseData._message) {
       dispatch({ type: REGISTER_FAIL });
