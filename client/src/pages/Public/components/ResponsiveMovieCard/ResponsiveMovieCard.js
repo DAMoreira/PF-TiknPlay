@@ -43,7 +43,14 @@ const MovieCard = props => {
               {movie.duration} min
             </Typography>
             <Typography
-              style={{ textTransform: 'capitalize' }}
+              style={{ textTransform: 'capitalize'}}
+              className={classes.idioma}
+              variant="body1"
+              color="inherit">
+              Ingles
+            </Typography>
+            <Typography
+              style={{ textTransform: 'capitalize'}}
               className={classes.genre}
               variant="body1"
               color="inherit">

@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
     whiteSpace: 'nowrap',
     textOverflow: 'ellipsis',
     color: theme.palette.text.secondary,
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2)
   },
   stats: {
@@ -56,6 +56,13 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+const convertFirstCharacterToUppercase = stringToConvert => {
+  var firstCharacter = stringToConvert.substring(0, 1);
+  var restString = stringToConvert.substring(1);
+
+  return firstCharacter.toUpperCase() + restString;
+};
+
 function MovieCard(props) {
   const classes = useStyles(props);
   const { className, movie } = props;
@@ -71,7 +78,7 @@ function MovieCard(props) {
           {movie.title}
         </Typography>
         <Typography className={classes.description} variant="body1">
-          {movie.description}
+          {convertFirstCharacterToUppercase(movie.description)}
         </Typography>
       </div>
       <div className={classes.stats}>

@@ -1,17 +1,17 @@
 export const genreData = [
-  'action',
-  'adventure',
-  'comedy',
-  'drama',
-  'fantasy',
-  'historical',
-  'horror',
-  'mystery',
-  'romance',
-  'science fiction',
-  'thriller',
-  'political',
-  'western'
+  'Acción',
+  'Aventura',
+  'Comedia',
+  'Drama',
+  'Fantasia',
+  'Histórico',
+  'Terror',
+  'Misterio',
+  'Romance',
+  'Ciencia ficción',
+  'Thriller',
+  'Política',
+  'Western'
 ];
 
-export const languageData = ['english', 'greek', 'german', 'french'];
+export const languageData = ['Inglés subtitulada', 'Español', 'Alemán', 'Francés', 'Portugués', 'Italiano', 'Japonés', 'Koreano', 'Chino'];

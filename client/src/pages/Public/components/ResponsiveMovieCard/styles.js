@@ -45,6 +45,10 @@ export default theme => ({
     border: '1px solid rgba(255,255,255,0.13)'
   },
   genre: {
+    color: '#cee4fd',
+    marginTop: theme.spacing(1)
+  },
+  idioma: {
     display: 'inline-block',
     color: '#cee4fd',
     marginLeft: theme.spacing(2)
