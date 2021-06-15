@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import { Rating } from '@material-ui/lab';
+import { SERVER_IP} from '../../../../store/types';
 import {
   Box,
   Typography,
@@ -102,7 +103,7 @@ function MovieBanner(props) {
       <div
         className={classes.blurBackground}
         style={{
-          backgroundImage: `url(${movie.image})`
+          backgroundImage: `url(http://${SERVER_IP}:8080/image/${movie.image})`
         }}
       />
       <div className={classes.movieActions}>

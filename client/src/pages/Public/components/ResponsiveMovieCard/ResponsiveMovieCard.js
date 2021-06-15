@@ -7,6 +7,7 @@ import styles from './styles';
 // import CaledarIcon from '@material-ui/icons/CalendarToday';
 import { textTruncate } from '../../../../utils';
 import { Link } from 'react-router-dom';
+import { SERVER_IP} from '../../../../store/types';
 
 const convertFirstCharacterToUppercase = stringToConvert => {
   var firstCharacter = stringToConvert.substring(0, 1);
@@ -83,7 +84,7 @@ const MovieCard = props => {
         <div
           className={classes.blurBackground}
           style={{
-            backgroundImage: `url(${movie.image})`
+            backgroundImage: `url(http://${SERVER_IP}:8080/image/${movie.image})`
           }}
         />
       </Paper>

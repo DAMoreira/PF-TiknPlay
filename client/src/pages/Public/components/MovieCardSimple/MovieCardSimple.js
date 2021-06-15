@@ -7,7 +7,7 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-
+import { SERVER_IP } from '../../../../store/types'
 const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 400,
@@ -34,7 +34,7 @@ const MovieCardSimple = props => {
         <CardActionArea>
           <CardMedia
             className={classes.media}
-            image={movie.image}
+            image={`http://${SERVER_IP}:8080/image/${movie.image}`}
             title={movie.title}
           />
           <CardContent>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Grid, Typography } from '@material-ui/core';
+import { SERVER_IP} from '../../../../../store/types';
+
 const useStyles = makeStyles(theme => ({
   movieInfos: {
     background: 'rgba(57, 61, 67, 0.5)',
@@ -62,7 +64,7 @@ export default function MovieInfo(props) {
         <div
           className={classes.background}
           style={{
-            backgroundImage: `url(${movie.image})`
+            backgroundImage: `url(http://${SERVER_IP}:8080/image/${movie.image})`
           }}
         />
         <Typography className={classes.title}>{movie.title}</Typography>

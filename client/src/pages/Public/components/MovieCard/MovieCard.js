@@ -4,6 +4,7 @@ import { withStyles, Typography } from '@material-ui/core';
 import styles from './styles';
 import { textTruncate } from '../../../../utils';
 import { Link } from 'react-router-dom';
+import { SERVER_IP} from '../../../../store/types';
 
 const MovieCard = props => {
   const { classes, movie } = props;
@@ -14,7 +15,7 @@ const MovieCard = props => {
         <header
           className={classes.header}
           style={{
-            backgroundImage: `url(${movie.image})`
+            backgroundImage: `url(http://${SERVER_IP}:8080/image/${movie.image})`
           }}>
           <Typography className={classes.h4} variant="h4" color="inherit">
             {movie.genre}

@@ -9,7 +9,7 @@ const movieSchema = new Schema({
     lowercase: true,
   },
   image: {
-    type: String,
+        type: String
   },
   language: {
     type: String,

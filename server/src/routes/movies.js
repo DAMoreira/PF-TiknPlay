@@ -3,8 +3,41 @@ const auth = require('../middlewares/auth');
 const upload = require('../utils/multer');
 const Movie = require('../models/movie');
 const userModeling = require('../utils/userModeling');
+const uploadController = require("../utils/upload");
+const Grid = require('gridfs-stream');
+const mongoose = require('mongoose');
 
 const router = new express.Router();
+const conn = mongoose.connection;
+let gfs;
+
+conn.once('open', () => {
+  // Init stream
+  gfs = Grid(conn.db, mongoose.mongo);
+  gfs.collection('photos'); //collection name
+});
+
+
+router.get('/image/:filename', (req, res) => {
+  //console.log(gfs.files.filename);
+  gfs.files.findOne({filename: req.params.filename}, (err, file) => {
+    console.log(file);
+    if(!file || file.length === 0){
+      return res.status(404).json({err: 'No File Exists'});
+    } else {
+      // Check if is image
+      if(file.contentType === "image/jpeg" || file.contentType === "image/png"){
+        // Read output to broswer
+        const readstream = gfs.createReadStream(file.filename);
+        readstream.pipe(res);
+      } else {
+        res.status(404).json({err: 'Not and image'});
+      }
+    }
+  });
+});
+
+
 
 // Create a movie
 router.post('/movies', auth.enhance, async (req, res) => {
@@ -17,7 +50,7 @@ router.post('/movies', auth.enhance, async (req, res) => {
   }
 });
 
-router.get(
+/*router.get(
   '/movies/photo/:id',
   auth.enhance,
   upload('movies').single('file'),
@@ -41,7 +74,12 @@ router.get(
       res.sendStatus(400).send(e);
     }
   }
-);
+);*/
+
+router.post(
+  "/movies/photo/:id",
+  uploadController.uploadFile);
+
 
 // Get all movies
 router.get('/movies', async (req, res) => {
