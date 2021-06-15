@@ -3,7 +3,7 @@ const auth = require('../middlewares/auth');
 const upload = require('../utils/multer');
 const Movie = require('../models/movie');
 const userModeling = require('../utils/userModeling');
-const uploadController = require("../utils/upload");
+const uploadController = require('../utils/upload');
 const Grid = require('gridfs-stream');
 const mongoose = require('mongoose');
 
@@ -17,27 +17,24 @@ conn.once('open', () => {
   gfs.collection('photos'); //collection name
 });
 
-
 router.get('/image/:filename', (req, res) => {
   //console.log(gfs.files.filename);
-  gfs.files.findOne({filename: req.params.filename}, (err, file) => {
+  gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
     console.log(file);
-    if(!file || file.length === 0){
-      return res.status(404).json({err: 'No File Exists'});
+    if (!file || file.length === 0) {
+      return res.status(404).json({ err: 'No File Exists' });
     } else {
       // Check if is image
-      if(file.contentType === "image/jpeg" || file.contentType === "image/png"){
+      if (file.contentType === 'image/jpeg' || file.contentType === 'image/png') {
         // Read output to broswer
         const readstream = gfs.createReadStream(file.filename);
         readstream.pipe(res);
       } else {
-        res.status(404).json({err: 'Not and image'});
+        res.status(404).json({ err: 'Not and image' });
       }
     }
   });
 });
-
-
 
 // Create a movie
 router.post('/movies', auth.enhance, async (req, res) => {
@@ -76,10 +73,7 @@ router.post('/movies', auth.enhance, async (req, res) => {
   }
 );*/
 
-router.post(
-  "/movies/photo/:id",
-  uploadController.uploadFile);
-
+router.post('/movies/photo/:id', uploadController.uploadFile);
 
 // Get all movies
 router.get('/movies', async (req, res) => {
@@ -120,13 +114,13 @@ router.put('/movies/:id', auth.enhance, async (req, res) => {
     'releaseDate',
     'endDate',
   ];
-  const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
+  const isValidOperation = updates.every(update => allowedUpdates.includes(update));
 
   if (!isValidOperation) return res.status(400).send({ error: 'Invalid updates!' });
 
   try {
     const movie = await Movie.findById(_id);
-    updates.forEach((update) => (movie[update] = req.body[update]));
+    updates.forEach(update => (movie[update] = req.body[update]));
     await movie.save();
     return !movie ? res.sendStatus(404) : res.send(movie);
   } catch (e) {

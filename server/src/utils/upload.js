@@ -10,10 +10,10 @@ const uploadFile = async (req, res) => {
     }
     const movieId = req.params.id;
     const movie = await Movie.findById(movieId);
-    console.log(movie);
+    //console.log(movie);
     if (!movie) return res.sendStatus(404);
     movie.image = req.params.id;
-    console.log("hola ",movie.image);
+    //console.log('hola ', movie.image);
     await movie.save();
 
     return res.send(`File has been uploaded.`);

@@ -65,13 +65,13 @@ router.patch('/cinemas/:id', auth.enhance, async (req, res) => {
   const _id = req.params.id;
   const updates = Object.keys(req.body);
   const allowedUpdates = ['name', 'ticketPrice', 'city', 'seats', 'seatsAvailable'];
-  const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
+  const isValidOperation = updates.every(update => allowedUpdates.includes(update));
 
   if (!isValidOperation) return res.status(400).send({ error: 'Invalid updates!' });
 
   try {
     const cinema = await Cinema.findById(_id);
-    updates.forEach((update) => (cinema[update] = req.body[update]));
+    updates.forEach(update => (cinema[update] = req.body[update]));
     await cinema.save();
     if (!cinema) return res.sendStatus(404);
     return res.send(cinema);

@@ -68,9 +68,9 @@ function MyDashboard(props) {
         )}*/}
         <Grid item xs={12}>
           <Account
-          reservations={myReservations}
-          movies={movies}
-          cinemas={cinemas} 
+            reservations={myReservations}
+            movies={movies}
+            cinemas={cinemas}
           />
         </Grid>
       </Grid>
@@ -92,7 +92,4 @@ const mapStateToProps = ({
 
 const mapDispatchToProps = { getMovies, getReservations, getCinemas };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(MyDashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(MyDashboard);

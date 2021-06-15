@@ -5,8 +5,7 @@ import { makeStyles } from '@material-ui/core';
 import { Typography } from '@material-ui/core';
 import { AccessTime as AccessTimeIcon } from '@material-ui/icons';
 import { Paper } from '../../../../../components';
-import { SERVER_IP} from '../../../../../store/types';
-
+import { SERVER_IP } from '../../../../../store/types';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -73,7 +72,11 @@ function MovieCard(props) {
   return (
     <Paper className={rootClassName}>
       <div className={classes.imageWrapper}>
-        <img alt="movie" className={classes.image} src={`http://${SERVER_IP}:8080/image/${movie.image}`} />
+        <img
+          alt="movie"
+          className={classes.image}
+          src={`http://${SERVER_IP}:8080/image/${movie.image}`}
+        />
       </div>
       <div className={classes.details}>
         <Typography className={classes.title} variant="h4">

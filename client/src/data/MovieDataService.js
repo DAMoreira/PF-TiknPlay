@@ -14,4 +14,14 @@ export const genreData = [
   'Western'
 ];
 
-export const languageData = ['Inglés subtitulada', 'Español', 'Alemán', 'Francés', 'Portugués', 'Italiano', 'Japonés', 'Koreano', 'Chino'];
+export const languageData = [
+  'Inglés subtitulada',
+  'Español',
+  'Alemán',
+  'Francés',
+  'Portugués',
+  'Italiano',
+  'Japonés',
+  'Koreano',
+  'Chino'
+];

@@ -71,7 +71,7 @@ const TotalMovies = props => {
             16%
           </Typography>
           <Typography className={classes.caption} variant="caption">
-           Desde el último mes
+            Desde el último mes
           </Typography>
         </div>
       </CardContent>

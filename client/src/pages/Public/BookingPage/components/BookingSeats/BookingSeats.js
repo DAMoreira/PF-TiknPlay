@@ -60,35 +60,36 @@ export default function BookingSeats(props) {
         {seats.length > 0 &&
           seats.map((seatRows, indexRow) => (
             <div key={indexRow} className={classes.row}>
-              {seatRows.map((seat, index) => (
-                seat !== 1 ?
-                <Box
-                  key={`seat-${index}`}
-                  onClick={() => onSelectSeat(indexRow, index)}
-                  className={classes.seat}
-                  bgcolor={
-                    seat === 1
-                      ? 'rgb(65, 66, 70)'
-                      : seat === 2
-                      ? 'rgb(120, 205, 4)'
-                      : 'rgb(96, 93, 169)'
-                  }>
-                  {index + 1}
-                </Box>
-                :
-                <Box
-                  key={`seat-${index}`}
-                  className={classes.seatReservado}
-                  bgcolor={
-                    seat === 1
-                      ? 'rgb(65, 66, 70)'
-                      : seat === 2
-                      ? 'rgb(120, 205, 4)'
-                      : 'rgb(96, 93, 169)'
-                  }>
-                  {index + 1}
-                </Box>
-              ))}
+              {seatRows.map((seat, index) =>
+                seat !== 1 ? (
+                  <Box
+                    key={`seat-${index}`}
+                    onClick={() => onSelectSeat(indexRow, index)}
+                    className={classes.seat}
+                    bgcolor={
+                      seat === 1
+                        ? 'rgb(65, 66, 70)'
+                        : seat === 2
+                        ? 'rgb(120, 205, 4)'
+                        : 'rgb(96, 93, 169)'
+                    }>
+                    {index + 1}
+                  </Box>
+                ) : (
+                  <Box
+                    key={`seat-${index}`}
+                    className={classes.seatReservado}
+                    bgcolor={
+                      seat === 1
+                        ? 'rgb(65, 66, 70)'
+                        : seat === 2
+                        ? 'rgb(120, 205, 4)'
+                        : 'rgb(96, 93, 169)'
+                    }>
+                    {index + 1}
+                  </Box>
+                )
+              )}
             </div>
           ))}
       </Box>

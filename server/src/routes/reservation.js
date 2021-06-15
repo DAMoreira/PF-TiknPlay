@@ -68,13 +68,13 @@ router.patch('/reservations/:id', auth.enhance, async (req, res) => {
     'phone',
     'checkin',
   ];
-  const isValidOperation = updates.every((update) => allowedUpdates.includes(update));
+  const isValidOperation = updates.every(update => allowedUpdates.includes(update));
 
   if (!isValidOperation) return res.status(400).send({ error: 'Invalid updates!' });
 
   try {
     const reservation = await Reservation.findById(_id);
-    updates.forEach((update) => (reservation[update] = req.body[update]));
+    updates.forEach(update => (reservation[update] = req.body[update]));
     await reservation.save();
     return !reservation ? res.sendStatus(404) : res.send(reservation);
   } catch (e) {

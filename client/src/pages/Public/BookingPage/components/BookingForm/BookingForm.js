@@ -18,8 +18,6 @@ export default function BookingForm(props) {
     onChangeTime
   } = props;
 
-
-
   var maxDate = new Date();
   var minDate = new Date();
 

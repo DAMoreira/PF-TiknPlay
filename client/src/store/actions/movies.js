@@ -1,4 +1,4 @@
-import { GET_MOVIES, SELECT_MOVIE,GET_SUGGESTIONS } from '../types';
+import { GET_MOVIES, SELECT_MOVIE, GET_SUGGESTIONS } from '../types';
 import { setAlert } from './alert';
 
 export const uploadMovieImage = (id, image) => async dispatch => {

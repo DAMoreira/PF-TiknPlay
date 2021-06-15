@@ -46,7 +46,8 @@ export default function BookingInvitation(props) {
           className={classes.successInfo}
           variant="body1"
           align="center">
-          Tu reserva se ha realizado con exito! Comproba tu correo electronico para obtener tu codigo QR.
+          Tu reserva se ha realizado con exito! Comproba tu correo electronico
+          para obtener tu codigo QR.
         </Typography>
         <Typography
           className={classes.successInfo}
@@ -54,7 +55,9 @@ export default function BookingInvitation(props) {
           align="center">
           Asientos reservados: {selectedSeats}
         </Typography>
-        <div className={classes.image} align="center"><img src={getQR()}></img></div>
+        <div className={classes.image} align="center">
+          <img src={getQR()}></img>
+        </div>
         <Box width={1} textAlign="center" spacing={3}>
           <Button
             color="primary"
@@ -93,17 +96,17 @@ export default function BookingInvitation(props) {
                 Enviar invitaciones
               </Button>
             </Grid>*/}
-            <Grid item>
-              <Button
-                className={classes.ignoreButton}
-                color="secondary"
-                variant="outlined"
-                onClick={() => ignore()}>
-                Cerrar
-              </Button>
-            </Grid>
-         {/* </Grid>*/}
-              </Grid>
+          <Grid item>
+            <Button
+              className={classes.ignoreButton}
+              color="secondary"
+              variant="outlined"
+              onClick={() => ignore()}>
+              Cerrar
+            </Button>
+          </Grid>
+          {/* </Grid>*/}
+        </Grid>
       </Paper>
     </div>
   );

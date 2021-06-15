@@ -3,7 +3,7 @@ import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Loading from './components/Loading';
 import { ProtectedRoute, WithLayoutRoute } from './routers';
-import { Redirect } from "react-router-dom";
+import { Redirect } from 'react-router-dom';
 
 import { AdminLayout, PublicLayout } from './layouts';
 
@@ -47,14 +47,14 @@ const Routes = () => {
             layout={PublicLayout}
           />
 
-       {/*   <WithLayoutRoute
+          {/*   <WithLayoutRoute
             exact
             path="/"
             layout={PublicLayout}
             component={HomePage}
           />*/}
           <Route exact path="/">
-           <Redirect to="/movie/category/nowShowing" />
+            <Redirect to="/movie/category/nowShowing" />
           </Route>
           <WithLayoutRoute
             exact

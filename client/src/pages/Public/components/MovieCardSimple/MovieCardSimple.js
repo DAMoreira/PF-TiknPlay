@@ -7,7 +7,7 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import { SERVER_IP } from '../../../../store/types'
+import { SERVER_IP } from '../../../../store/types';
 const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 400,

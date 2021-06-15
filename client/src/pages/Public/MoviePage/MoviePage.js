@@ -31,7 +31,4 @@ const mapStateToProps = ({ movieState }) => ({
 
 const mapDispatchToProps = { getMovie, onSelectMovie };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(MoviePage);
+export default connect(mapStateToProps, mapDispatchToProps)(MoviePage);

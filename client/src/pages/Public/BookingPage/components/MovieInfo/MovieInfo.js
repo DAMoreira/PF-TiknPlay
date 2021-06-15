@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Grid, Typography } from '@material-ui/core';
-import { SERVER_IP} from '../../../../../store/types';
+import { SERVER_IP } from '../../../../../store/types';
 
 const useStyles = makeStyles(theme => ({
   movieInfos: {

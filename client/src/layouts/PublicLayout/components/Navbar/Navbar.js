@@ -38,7 +38,9 @@ class Navbar extends Component {
           })}>
           <Link className={classes.logoLink} to="/">
             <Typography className={classes.logo} variant="h2">
-            <img src="https://i.postimg.cc/SxzHHPjr/6.png" className={classes.logo}></img>
+              <img
+                src="https://i.postimg.cc/SxzHHPjr/6.png"
+                className={classes.logo}></img>
             </Typography>
           </Link>
           <div className={classes.navLinks}>
@@ -68,11 +70,7 @@ class Navbar extends Component {
                           ? '/admin/dashboard'
                           : '/mydashboard'
                       }>
-                      {
-                        user.role !== 'guest'
-                          ? "Panel de Control"
-                          : "Mi perfil"
-                      }
+                      {user.role !== 'guest' ? 'Panel de Control' : 'Mi perfil'}
                     </Link>
                   </ListItem>
                 )}

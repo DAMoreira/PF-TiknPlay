@@ -108,7 +108,9 @@ class AddMovie extends Component {
     } = this.state;
 
     const rootClassName = classNames(classes.root, className);
-    const subtitle = this.props.edit ? 'Modificar Película' : 'Agregar película';
+    const subtitle = this.props.edit
+      ? 'Modificar Película'
+      : 'Agregar película';
     const submitButton = this.props.edit ? 'Guardar' : 'Guardar';
     const submitAction = this.props.edit
       ? () => this.onUpdateMovie()

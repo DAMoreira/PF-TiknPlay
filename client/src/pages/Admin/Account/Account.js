@@ -31,7 +31,7 @@ const styles = theme => ({
   title3: {
     fontSize: '1rem',
     lineHeight: '3rem',
-    textAlign: 'center',
+    textAlign: 'center'
   }
 });
 
@@ -45,27 +45,38 @@ class Account extends Component {
 
   render() {
     const { image } = this.state;
-    const { classes, user, uploadImage, reservations, movies, cinemas } = this.props;
+    const {
+      classes,
+      user,
+      uploadImage,
+      reservations,
+      movies,
+      cinemas
+    } = this.props;
 
     const myReservations = reservations.filter(
       reservation => reservation.username === user.username
     );
-    
+
     return (
       <div className={classes.root}>
         <Grid container spacing={4}>
           <Grid item xs={12}>
-            {
-              user.role !== 'guest'
-                ?
-                <Typography className={classes.title} variant="h2" color="inherit">
-                  Mi perfil
-                </Typography>
-                :
-                <Typography className={classes.title2} variant="h2" color="inherit">
-                  Mi perfil
-                </Typography>
-            }
+            {user.role !== 'guest' ? (
+              <Typography
+                className={classes.title}
+                variant="h2"
+                color="inherit">
+                Mi perfil
+              </Typography>
+            ) : (
+              <Typography
+                className={classes.title2}
+                variant="h2"
+                color="inherit">
+                Mi perfil
+              </Typography>
+            )}
           </Grid>
           <Grid item lg={4} md={6} xl={4} xs={12}>
             <AccountProfile
@@ -85,17 +96,17 @@ class Account extends Component {
             />
           </Grid>
           <Grid item xs={12}>
-            <Typography
-              className={classes.title2}
-              variant="h2"
-              color="inherit">
+            <Typography className={classes.title2} variant="h2" color="inherit">
               Mis reservas
             </Typography>
-            {reservations.length === 0 ?
-              <Typography className={classes.title3} variant="h2" color="inherit">
+            {reservations.length === 0 ? (
+              <Typography
+                className={classes.title3}
+                variant="h2"
+                color="inherit">
                 No tenés reservas cargadas...
               </Typography>
-              :
+            ) : (
               <Grid item xs={12}>
                 <MyReservationTable
                   reservations={myReservations}
@@ -103,9 +114,8 @@ class Account extends Component {
                   cinemas={cinemas}
                 />
               </Grid>
-            }
+            )}
           </Grid>
-
         </Grid>
       </div>
     );

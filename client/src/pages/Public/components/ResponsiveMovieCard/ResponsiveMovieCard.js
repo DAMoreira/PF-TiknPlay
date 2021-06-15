@@ -7,7 +7,7 @@ import styles from './styles';
 // import CaledarIcon from '@material-ui/icons/CalendarToday';
 import { textTruncate } from '../../../../utils';
 import { Link } from 'react-router-dom';
-import { SERVER_IP} from '../../../../store/types';
+import { SERVER_IP } from '../../../../store/types';
 
 const convertFirstCharacterToUppercase = stringToConvert => {
   var firstCharacter = stringToConvert.substring(0, 1);
@@ -44,18 +44,18 @@ const MovieCard = props => {
               {movie.duration} min
             </Typography>
             <Typography
-              style={{ textTransform: 'capitalize'}}
+              style={{ textTransform: 'capitalize' }}
               className={classes.language}
               variant="body1"
               color="inherit">
               {movie.language}
             </Typography>
             <Typography
-              style={{ textTransform: 'capitalize'}}
+              style={{ textTransform: 'capitalize' }}
               className={classes.genre}
               variant="body1"
               color="inherit">
-              {movie.genre.replaceAll(',',', ')}
+              {movie.genre.replaceAll(',', ', ')}
             </Typography>
           </header>
 

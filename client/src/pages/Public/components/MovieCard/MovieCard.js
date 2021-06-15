@@ -4,7 +4,7 @@ import { withStyles, Typography } from '@material-ui/core';
 import styles from './styles';
 import { textTruncate } from '../../../../utils';
 import { Link } from 'react-router-dom';
-import { SERVER_IP} from '../../../../store/types';
+import { SERVER_IP } from '../../../../store/types';
 
 const MovieCard = props => {
   const { classes, movie } = props;

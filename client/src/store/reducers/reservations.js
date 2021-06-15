@@ -1,4 +1,4 @@
-import { GET_RESERVATIONS,GET_RESERVATION_SUGGESTED_SEATS } from '../types';
+import { GET_RESERVATIONS, GET_RESERVATION_SUGGESTED_SEATS } from '../types';
 
 const initialState = {
   reservations: []

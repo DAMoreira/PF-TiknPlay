@@ -22,7 +22,14 @@ class ShowtimeList extends Component {
   };
 
   componentDidMount() {
-    const { movies, showtimes, getShowtimes, getMovies, cinemas, getCinemas } = this.props;
+    const {
+      movies,
+      showtimes,
+      getShowtimes,
+      getMovies,
+      cinemas,
+      getCinemas
+    } = this.props;
     if (!showtimes.length) getShowtimes();
     if (!movies.length) getMovies();
     if (!cinemas.length) getCinemas();
@@ -83,7 +90,7 @@ class ShowtimeList extends Component {
   }
 }
 
-const mapStateToProps = ({ showtimeState, movieState, cinemaState}) => ({
+const mapStateToProps = ({ showtimeState, movieState, cinemaState }) => ({
   openDialog: showtimeState.openDialog,
   showtimes: showtimeState.showtimes,
   movies: movieState.movies,
@@ -98,7 +105,7 @@ const mapDispatchToProps = {
   selectAllShowtimes,
   deleteShowtime,
   getMovies,
-  getCinemas,
+  getCinemas
 };
 
 export default connect(

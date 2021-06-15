@@ -88,7 +88,7 @@ class BookingPage extends Component {
 
   getQR = () => {
     const { QRCode } = this.props;
-    return QRCode
+    return QRCode;
   };
 
   onSelectSeat = (row, seat) => {
@@ -366,7 +366,7 @@ class BookingPage extends Component {
       setInvitation,
       resetCheckout,
       suggestedSeats,
-      suggestedSeat,
+      suggestedSeat
     } = this.props;
     const { uniqueCinemas, uniqueTimes } = this.onFilterCinema();
     let seats = this.onGetReservedSeats();

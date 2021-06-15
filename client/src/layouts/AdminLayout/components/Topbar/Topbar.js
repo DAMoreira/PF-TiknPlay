@@ -52,10 +52,7 @@ class Topbar extends Component {
             <NavLink className={classes.logo} to="/">
               Tik&Play
             </NavLink>
-
           </div>
-
-
 
           <IconButton
             className={classes.notificationsButton}

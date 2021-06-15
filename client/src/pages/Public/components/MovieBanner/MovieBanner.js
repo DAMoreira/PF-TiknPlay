@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import { Rating } from '@material-ui/lab';
-import { SERVER_IP} from '../../../../store/types';
+import { SERVER_IP } from '../../../../store/types';
 import {
   Box,
   Typography,

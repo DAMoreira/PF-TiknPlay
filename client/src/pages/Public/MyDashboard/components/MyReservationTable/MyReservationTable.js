@@ -91,10 +91,10 @@ class ReservationsTable extends Component {
                       {reservation.startAt}
                     </TableCell>
                     <TableCell className={classes.tableCell}>
-                    <span>&#36;</span> {reservation.ticketPrice}
+                      <span>&#36;</span> {reservation.ticketPrice}
                     </TableCell>
                     <TableCell className={classes.tableCell}>
-                    <span>&#36;</span> {reservation.total}
+                      <span>&#36;</span> {reservation.total}
                     </TableCell>
                   </TableRow>
                 ))}

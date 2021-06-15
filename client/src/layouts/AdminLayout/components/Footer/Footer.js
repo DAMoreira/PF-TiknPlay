@@ -12,7 +12,10 @@ export default function Footer() {
       </Typography>
       <Typography variant="caption">
         Proyecto final |{' '}
-        <Link href="https://github.com/DAMoreira/PF-TiknPlay" target="_blank" rel="noopener">
+        <Link
+          href="https://github.com/DAMoreira/PF-TiknPlay"
+          target="_blank"
+          rel="noopener">
           Tik&PLay
         </Link>
       </Typography>
