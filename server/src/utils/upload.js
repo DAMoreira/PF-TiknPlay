@@ -1,11 +1,9 @@
 const upload = require('../middlewares/upload');
 const Movie = require('../models/movie');
-const GridFs = require('../models/gridfs');
 const Grid = require('gridfs-stream');
 const mongoose = require('mongoose');
 const express = require('express');
 
-const router = new express.Router();
 const conn = mongoose.connection;
 let gfs;
 
@@ -13,7 +11,7 @@ const uploadFile = async (req, res) => {
   try {
     gfs = Grid(conn.db, mongoose.mongo);
     gfs.collection('photos'); //collection name
-    const aux = await gfs.files.deleteMany({ filename: req.params.id });
+    await gfs.files.deleteMany({ filename: req.params.id });
     await upload(req, res);
     console.log(req.file);
     if (req.file == undefined) {
