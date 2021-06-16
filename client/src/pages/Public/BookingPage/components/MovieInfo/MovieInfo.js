@@ -95,7 +95,7 @@ export default function MovieInfo(props) {
                 Géneros
               </Typography>
               <Typography variant="caption" color="inherit">
-                {movie.genre}
+                {movie.genre.replaceAll(',', ', ')}
               </Typography>
             </div>
           )}
