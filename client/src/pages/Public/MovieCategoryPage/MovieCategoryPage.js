@@ -13,8 +13,23 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(15),
     marginBottom: theme.spacing(3)
   },
+  body: {
+    fontSize: '1.25rem',
+    lineHeight: '1.25rem',
+    textAlign: 'center',
+    textTransform: 'uppercase',
+    marginTop: theme.spacing(5),
+    marginBottom: theme.spacing(3)
+  },
   [theme.breakpoints.down('sm')]: {
     fullWidth: { width: '100%' }
+  },
+  img: {
+    margin: 'auto',
+    display: 'block',
+    maxWidth: '40%',
+    maxHeight: '40%',
+    marginTop: theme.spacing(5),
   }
 }));
 
@@ -43,6 +58,17 @@ function MovieCategoryPage(props) {
               {category === 'nowShowing' ? 'Cartelera' : 'Proximamente'}
             </Typography>
           </Grid>
+          {!movies.length && (
+          <Grid item xs={12}>
+            <img
+            className={classes.img}
+            src="https://i.postimg.cc/D0ycFMx1/istockphoto-1191879865-612x612.png"
+            ></img>
+            <Typography className={classes.body} variant="h2" color="inherit">
+              Nada por aquí...
+            </Typography>
+          </Grid>
+          )}
           <Grid
             container
             item
