@@ -6,6 +6,7 @@ const userModeling = require('../utils/userModeling');
 const uploadController = require('../utils/upload');
 const Grid = require('gridfs-stream');
 const mongoose = require('mongoose');
+const Image = require('../models/gridfs');
 
 const router = new express.Router();
 const conn = mongoose.connection;
