@@ -2,6 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import { Rating } from '@material-ui/lab';
 import { SERVER_IP } from '../../../../store/types';
+import {isMobile} from 'react-device-detect';
 import {
   Box,
   Typography,
@@ -112,11 +113,11 @@ function MovieBanner(props) {
             }}ESTO VA ABAJO EN EL DIV*/}
         </header>
       </div>
-      {
-      video_id !== undefined ? 
+      {!isMobile &&
+      video_id !== undefined ?
         <div
           className={classes.blurBackground}>
-            <iframe frameBorder="0" height="100%" width="100%" display="block" display="flex" align-items="center" justify-content="center" cc_load_policy="1"
+            <iframe frameBorder="0" height="100%" width="100%"
               src={`https://www.youtube.com/embed/${video_id}?autoplay=1&loop=1&mute=1&controls=0&playlist=${video_id}`}
             >
             </iframe>
@@ -129,6 +130,15 @@ function MovieBanner(props) {
           }}
         >
         </div>
+      }
+      {isMobile && <div
+        className={classes.blurBackground}
+        style={{
+          backgroundImage: `url(http://${SERVER_IP}:8080/image/${movie.image})`
+        }}
+      >
+      </div>
+
       }
       <div className={classes.movieActions}>
         {fullDescription ? (
