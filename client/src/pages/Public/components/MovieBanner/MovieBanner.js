@@ -37,6 +37,15 @@ function MovieBanner(props) {
   const classes = useStyles(props);
   if (!movie) return null;
 
+  if (movie.trailer !== undefined) {
+    var video_id = movie.trailer.split('v=')[1];
+    var questionPosition = video_id.indexOf('&');
+    if (questionPosition != -1) {
+      video_id = video_id.substring(0, questionPosition);
+    }
+  }
+
+
   return (
     <div className={classes.movieHero}>
       <div className={classes.infoSection}>
@@ -98,14 +107,29 @@ function MovieBanner(props) {
           {/*<Typography className={classes.genre} variant="body1" color="inherit">
             {movie.genre}
               </Typography>*/}
+          {/*style={{
+            backgroundImage: `url(http://${SERVER_IP}:8080/image/${movie.image})`
+            }}ESTO VA ABAJO EN EL DIV*/}
         </header>
       </div>
-      <div
-        className={classes.blurBackground}
-        style={{
-          backgroundImage: `url(http://${SERVER_IP}:8080/image/${movie.image})`
-        }}
-      />
+      {
+      video_id !== undefined ? 
+        <div
+          className={classes.blurBackground}>
+            <iframe frameBorder="0" height="100%" width="100%" display="block" display="flex" align-items="center" justify-content="center" cc_load_policy="1"
+              src={`https://www.youtube.com/embed/${video_id}?autoplay=1&loop=1&mute=1&controls=0&playlist=${video_id}`}
+            >
+            </iframe>
+        </div>
+      :
+        <div
+          className={classes.blurBackground}
+          style={{
+            backgroundImage: `url(http://${SERVER_IP}:8080/image/${movie.image})`
+          }}
+        >
+        </div>
+      }
       <div className={classes.movieActions}>
         {fullDescription ? (
           <Link to={`booking/${movie._id}`} style={{ textDecoration: 'none' }}>
@@ -123,6 +147,7 @@ function MovieBanner(props) {
           </Link>
         )}
       </div>
+
     </div>
   );
 }

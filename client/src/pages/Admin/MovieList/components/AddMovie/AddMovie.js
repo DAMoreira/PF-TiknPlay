@@ -29,7 +29,8 @@ class AddMovie extends Component {
     director: '',
     cast: '',
     releaseDate: new Date(),
-    endDate: new Date()
+    endDate: new Date(),
+    trailer: ''
   };
 
   componentDidMount() {
@@ -43,7 +44,8 @@ class AddMovie extends Component {
         description,
         duration,
         releaseDate,
-        endDate
+        endDate,
+        trailer
       } = this.props.edit;
       this.setState({
         title,
@@ -54,7 +56,8 @@ class AddMovie extends Component {
         description,
         duration,
         releaseDate,
-        endDate
+        endDate,
+        trailer
       });
     }
   }
@@ -104,7 +107,8 @@ class AddMovie extends Component {
       director,
       cast,
       releaseDate,
-      endDate
+      endDate,
+      trailer
     } = this.state;
 
     const rootClassName = classNames(classes.root, className);
@@ -256,6 +260,20 @@ class AddMovie extends Component {
                 }}
               />
             </MuiPickersUtilsProvider>
+          </div>
+          <div className={classes.field}>
+            <TextField
+              className={classes.textField}
+              helperText="Ingresar link del video de YouTube"
+              label="Trailer"
+              margin="dense"
+              required
+              value={trailer}
+              variant="outlined"
+              onChange={event =>
+                this.handleFieldChange('trailer', event.target.value)
+              }
+            />
           </div>
           <div className={classes.field}>
             <FileUpload
