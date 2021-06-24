@@ -2,7 +2,7 @@ export default theme => ({
   root: {},
   title: { marginLeft: theme.spacing(3) },
   field: {
-    margin: theme.spacing(3),
+    margin: theme.spacing(1),
     display: 'flex'
   },
   textField: {
