@@ -40,9 +40,11 @@ function MovieBanner(props) {
 
   if (movie.trailer !== undefined) {
     var video_id = movie.trailer.split('v=')[1];
-    var questionPosition = video_id.indexOf('&');
-    if (questionPosition != -1) {
-      video_id = video_id.substring(0, questionPosition);
+    if (video_id !== undefined) {
+      var questionPosition = video_id.indexOf('&');
+      if (questionPosition != -1) {
+        video_id = video_id.substring(0, questionPosition);
+      }
     }
   }
 
