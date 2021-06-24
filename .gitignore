@@ -105,3 +105,4 @@ react-material-dashboard-master/
 /.idea/codeStyles/Project.xml
 /.idea/inspectionProfiles/Project_Default.xml
 /.idea/vcs.xml
+client/src/store/types/serverip.js

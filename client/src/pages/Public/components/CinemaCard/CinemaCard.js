@@ -59,17 +59,18 @@ const useStyles = makeStyles(theme => ({
 function CinemaCard(props) {
   const classes = useStyles(props);
   const { className, cinema } = props;
-  const cinemaImage =
-    cinema && cinema.image
-      ? cinema.image
-      : 'https://source.unsplash.com/featured/?cinema';
+  const cinemaImage = 'https://i.postimg.cc/SQPRZ73D/Screen-Shot-2015-05-08-at-12-32-14-PM-0-0.jpg';
+  {/*const cinemaImage =
+  cinema && cinema.image
+    ? cinema.image
+    : 'https://source.unsplash.com/featured/?cinema';*/}
 
   const rootClassName = classNames(classes.root, className);
   return (
     <Paper className={rootClassName}>
-      {/*<div className={classes.imageWrapper}>
+      <div className={classes.imageWrapper}>
         <img alt="cinema" className={classes.image} src={cinemaImage} />
-  </div>*/}
+    </div>
       <div className={classes.details}>
         <Typography className={classes.name} variant="h4">
           {cinema.name}
@@ -81,7 +82,7 @@ function CinemaCard(props) {
       <div className={classes.stats}>
         <AttachMoney className={classes.eventIcon} />
         <Typography className={classes.eventText} variant="body2">
-          {cinema.ticketPrice} <span>&#36;</span> por asiento
+          {cinema.ticketPrice} <span></span> por asiento
         </Typography>
       </div>
       <div className={classes.stats}>
