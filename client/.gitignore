@@ -25,4 +25,4 @@ yarn-error.log*
 
 config.json
 
-/client/src/store/types/serverip
+src/store/types/serverip.js
