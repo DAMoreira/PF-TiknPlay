@@ -24,3 +24,5 @@ yarn-debug.log*
 yarn-error.log*
 
 config.json
+
+/client/src/store/types/serverip
