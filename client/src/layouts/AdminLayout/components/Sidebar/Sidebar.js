@@ -33,7 +33,7 @@ class Sidebar extends Component {
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
-              primary="Panel de Control"
+              primary="Estadísticas"
             />
           </ListItem>
           <ListItem
