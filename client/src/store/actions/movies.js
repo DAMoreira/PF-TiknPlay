@@ -10,15 +10,15 @@ export const uploadMovieImage = (id, image) => async dispatch => {
       method: 'POST',
       body: data
     });
-    const responseData = await response.json();
+    // const responseData = await response.json();
     if (response.ok) {
-      dispatch(setAlert('La imagen ha sido cargada', 'success', 5000));
+      dispatch(setAlert('La imagen ha sido cargada', 'success', 2500));
     }
-    if (responseData.error) {
-      dispatch(setAlert(responseData.error.message, 'error', 5000));
+    if (response.error) {
+      dispatch(setAlert(response.error.message, 'error', 2500));
     }
   } catch (error) {
-    dispatch(setAlert(error.message, 'error', 5000));
+    dispatch(setAlert(error.message, 'error', 2500));
   }
 };
 
@@ -112,7 +112,7 @@ export const updateMovie = (movieId, movie, image) => async dispatch => {
     });
     if (response.ok) {
       dispatch(onSelectMovie(null));
-      dispatch(setAlert('Cambios guardados!', 'success', 5000));
+      dispatch(setAlert('Cambios guardados!', 'success', 2500));
       if (image) dispatch(uploadMovieImage(movieId, image));
       dispatch(getMovies());
     }
