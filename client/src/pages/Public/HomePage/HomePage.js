@@ -55,7 +55,7 @@ class HomePage extends Component {
         />
         <MovieCarousel
           carouselClass={classes.carousel}
-          title="Cartelera"
+          title="En Cartelera"
           to="/movie/category/nowShowing"
           movies={nowShowing}
         />

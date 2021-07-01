@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import CancelIcon from '@material-ui/icons/Cancel';
 import {
   Table,
   TableBody,
@@ -101,13 +103,13 @@ class ReservationsTable extends Component {
                       {this.onFindAttr(reservation.cinemaId, cinemas, 'name')}
                     </TableCell>
                     <TableCell className={classes.tableCell}>
-                      {reservation.ticketPrice}
+                      $ {reservation.ticketPrice}
                     </TableCell>
                     <TableCell className={classes.tableCell}>
-                      {reservation.total}
+                      $ {reservation.total}
                     </TableCell>
                     <TableCell className={classes.tableCell}>
-                      {reservation.checkin ? 'yes' : 'no'}
+                      {reservation.checkin ? <CheckCircleIcon style={{ color: "green"}}/> : <CancelIcon style={{ color: "red"}}/>}
                     </TableCell>
                   </TableRow>
                 ))}

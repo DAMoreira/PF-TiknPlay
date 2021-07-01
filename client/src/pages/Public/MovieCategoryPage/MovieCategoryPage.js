@@ -55,7 +55,7 @@ function MovieCategoryPage(props) {
         <>
           <Grid item xs={12}>
             <Typography className={classes.title} variant="h2" color="inherit">
-              {category === 'nowShowing' ? 'Cartelera' : 'Proximamente'}
+              {category === 'nowShowing' ? 'En Cartelera' : 'Proximamente'}
             </Typography>
           </Grid>
           {!movies.length && (
