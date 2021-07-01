@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/styles';
 import { Typography, TextField, Grid, Button, Box } from '@material-ui/core';
 import { Paper } from '../../../../../components';
+import { ViewArraySharp } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -34,6 +35,20 @@ export default function BookingInvitation(props) {
     getQR
   } = props;
 
+
+  function coso(c) {
+    c.forEach((element, i) => {
+      element[0] = String.fromCharCode(65 + element[0]);
+      element[1]++;
+      if (c.length !== (i+1)) {
+        element[1] = element[1] + ", ";
+      }
+    });   
+    return c
+  }
+
+
+
   const notValidInvitations = !Object.keys(invitations).length;
 
   return (
@@ -53,7 +68,7 @@ export default function BookingInvitation(props) {
           className={classes.successInfo}
           variant="body1"
           align="center">
-          Asientos reservados: {selectedSeats}
+          Asientos reservados: {coso(selectedSeats)}
         </Typography>
         <div className={classes.image} align="center">
           <img src={getQR()}></img>
