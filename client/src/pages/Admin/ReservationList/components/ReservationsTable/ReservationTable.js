@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core';
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-import CancelIcon from '@material-ui/icons/Cancel';
+import ClearIcon from '@material-ui/icons/Clear';
+import CheckIcon from '@material-ui/icons/Check';
 import {
   Table,
   TableBody,
@@ -109,7 +109,7 @@ class ReservationsTable extends Component {
                       $ {reservation.total}
                     </TableCell>
                     <TableCell className={classes.tableCell}>
-                      {reservation.checkin ? <CheckCircleIcon style={{ color: "green"}}/> : <CancelIcon style={{ color: "red"}}/>}
+                      {reservation.checkin ? <CheckIcon style={{ color: "green"}}/> : <ClearIcon style={{ color: "red"}}/>}
                     </TableCell>
                   </TableRow>
                 ))}
