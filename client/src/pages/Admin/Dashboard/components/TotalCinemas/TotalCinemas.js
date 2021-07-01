@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { Card, CardContent, Grid, Typography, Avatar } from '@material-ui/core';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
-import TheatersIcon from '@material-ui/icons/Theaters';
+import EventSeatIcon from '@material-ui/icons/EventSeat';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -61,7 +61,7 @@ const TotalCinemas = props => {
           </Grid>
           <Grid item>
             <Avatar className={classes.avatar}>
-              <TheatersIcon className={classes.icon} />
+              <EventSeatIcon className={classes.icon} />
             </Avatar>
           </Grid>
         </Grid>

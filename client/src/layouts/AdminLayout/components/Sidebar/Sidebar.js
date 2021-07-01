@@ -12,8 +12,13 @@ import {
 } from '@material-ui/core';
 import DashboardIcon from '@material-ui/icons/DashboardOutlined';
 import PeopleIcon from '@material-ui/icons/PeopleOutlined';
+import EqualizerIcon from '@material-ui/icons/Equalizer';
+import LocalMoviesIcon from '@material-ui/icons/LocalMovies';
 import InfoIcon from '@material-ui/icons/InfoOutlined';
+import EventSeatIcon from '@material-ui/icons/EventSeat';
 import AccountBoxIcon from '@material-ui/icons/AccountBoxOutlined';
+import LocalPlayIcon from '@material-ui/icons/LocalPlay';
+import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
 // Component styles
 import styles from './styles';
 
@@ -29,7 +34,7 @@ class Sidebar extends Component {
             component={NavLink}
             to="/admin/dashboard">
             <ListItemIcon className={classes.listItemIcon}>
-              <DashboardIcon />
+              <EqualizerIcon />
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
@@ -42,7 +47,7 @@ class Sidebar extends Component {
             component={NavLink}
             to="/admin/movies">
             <ListItemIcon className={classes.listItemIcon}>
-              <DashboardIcon />
+              <LocalMoviesIcon />
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
@@ -55,7 +60,7 @@ class Sidebar extends Component {
             component={NavLink}
             to="/admin/cinemas">
             <ListItemIcon className={classes.listItemIcon}>
-              <DashboardIcon />
+              <EventSeatIcon />
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
@@ -68,7 +73,7 @@ class Sidebar extends Component {
             component={NavLink}
             to="/admin/showtimes">
             <ListItemIcon className={classes.listItemIcon}>
-              <PeopleIcon />
+              <LocalPlayIcon />
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}
@@ -81,7 +86,7 @@ class Sidebar extends Component {
             component={NavLink}
             to="/admin/reservations">
             <ListItemIcon className={classes.listItemIcon}>
-              <PeopleIcon />
+              <PlaylistAddCheckIcon />
             </ListItemIcon>
             <ListItemText
               classes={{ primary: classes.listItemText }}

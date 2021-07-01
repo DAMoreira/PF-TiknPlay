@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/styles';
 import { Card, CardContent, Grid, Typography, Avatar } from '@material-ui/core';
-import EventIcon from '@material-ui/icons/Event';
+import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -53,7 +53,7 @@ const TotalReservations = props => {
           </Grid>
           <Grid item>
             <Avatar className={classes.avatar}>
-              <EventIcon className={classes.icon} />
+              <PlaylistAddCheckIcon className={classes.icon} />
             </Avatar>
           </Grid>
         </Grid>
