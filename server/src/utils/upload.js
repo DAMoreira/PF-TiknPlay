@@ -25,7 +25,7 @@ const uploadFile = async (req, res) => {
     //console.log('hola ', movie.image);
     await movie.save();
 
-    return res.send(`File has been uploaded.`);
+    return res.sendStatus(200)
   } catch (error) {
     console.log(error);
     return res.send(`Error when trying upload image: ${error}`);
