@@ -35,7 +35,6 @@ export default function BookingInvitation(props) {
     getQR
   } = props;
 
-
   function coso(c) {
     c.forEach((element, i) => {
       element[0] = String.fromCharCode(65 + element[0]);
@@ -46,8 +45,6 @@ export default function BookingInvitation(props) {
     });   
     return c
   }
-
-
 
   const notValidInvitations = !Object.keys(invitations).length;
 

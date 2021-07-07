@@ -67,22 +67,25 @@ class BookingPage extends Component {
 
   // JSpdf Generator For generating the PDF
   jsPdfGenerator = () => {
-    const { movie, cinema, selectedDate, selectedTime, QRCode } = this.props;
+    const { movie, cinema, selectedDate, selectedTime, QRCode, selectedSeats} = this.props;
     const doc = new jsPDF();
     doc.setFont('helvetica');
     doc.setFontType('bold');
     doc.setFontSize(22);
-    doc.text(movie.title, 20, 20);
+    doc.text(movie.title.replace(/^[a-z]|[A-Z]/g, function(v, i) {
+      return i === 0 ? v.toUpperCase() : " " + v.toLowerCase()}), 20, 20);
     doc.setFontSize(16);
     doc.text(cinema.name, 20, 30);
     doc.text(
-      `Date: ${new Date(
+      `Fecha: ${new Date(
         selectedDate
-      ).toLocaleDateString()} - Time: ${selectedTime}`,
+      ).toLocaleDateString()} - Horario: ${selectedTime}`,
       20,
       40
     );
-    doc.addImage(QRCode, 'JPEG', 15, 40, 160, 160);
+    console.log(selectedSeats);
+    //doc.text(`Asientos: ${selectedSeats}`, 20, 50);
+    doc.addImage(QRCode, 'JPEG', 15, 50, 160, 160);
     doc.save(`${movie.title}-${cinema.name}.pdf`);
   };
 
