@@ -35,7 +35,7 @@ export default function BookingInvitation(props) {
     getQR
   } = props;
 
-  function coso(c) {
+  function translateSeats(c) {
     c.forEach((element, i) => {
       element[0] = String.fromCharCode(65 + element[0]);
       element[1]++;
@@ -65,7 +65,7 @@ export default function BookingInvitation(props) {
           className={classes.successInfo}
           variant="body1"
           align="center">
-          Asientos reservados: {coso(selectedSeats)}
+          Asientos reservados: {translateSeats(selectedSeats)}
         </Typography>
         <div className={classes.image} align="center">
           <img src={getQR()}></img>

@@ -33,8 +33,8 @@ class ShowtimesTable extends Component {
 
   static defaultProps = {
     showtimes: [],
-    onSelect: () => {},
-    onShowDetails: () => {}
+    onSelect: () => { },
+    onShowDetails: () => { }
   };
 
   handleChangePage = (event, page) => {
@@ -70,7 +70,7 @@ class ShowtimesTable extends Component {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell align="left">
+                {/*<TableCell align="left">
                   <Checkbox
                     checked={selectedShowtimes.length === showtimes.length}
                     color="primary"
@@ -81,8 +81,19 @@ class ShowtimesTable extends Component {
                     onChange={selectAllShowtimes}
                   />
                   ID
+                  </TableCell>*/}
+                <TableCell align="left">
+                  <Checkbox
+                    checked={selectedShowtimes.length === showtimes.length}
+                    color="primary"
+                    indeterminate={
+                      selectedShowtimes.length > 0 &&
+                      selectedShowtimes.length < showtimes.length
+                    }
+                    onChange={selectAllShowtimes}
+                  />
+                  Película
                 </TableCell>
-                <TableCell align="left">Película</TableCell>
                 <TableCell align="left">Sala</TableCell>
                 <TableCell align="left">Fecha de inicio</TableCell>
                 <TableCell align="left">Fecha de fin</TableCell>
@@ -101,7 +112,7 @@ class ShowtimesTable extends Component {
                     hover
                     key={showtime._id}
                     selected={selectedShowtimes.indexOf(showtime._id) !== -1}>
-                    <TableCell className={classes.tableCell}>
+                    {/*<TableCell className={classes.tableCell}>
                       <div className={classes.tableCellInner}>
                         <Checkbox
                           checked={
@@ -117,9 +128,21 @@ class ShowtimesTable extends Component {
                           {showtime._id}
                         </Typography>
                       </div>
-                    </TableCell>
+                        </TableCell>*/}
                     <TableCell className={classes.tableCell}>
-                      {this.onFindAttr(showtime.movieId, movies, 'title')}
+                      <div className={classes.tableCellInner}>
+                        <Checkbox
+                          checked={
+                            selectedShowtimes.indexOf(showtime._id) !== -1
+                          }
+                          color="primary"
+                          onChange={() => onSelectShowtime(showtime._id)}
+                          value="true"
+                        />
+                        {this.onFindAttr(showtime.movieId, movies, 'title').replace(/^[a-z]|[A-Z]/g, function (v, i) {
+                          return i === 0 ? v.toUpperCase() : " " + v.toLowerCase()
+                        })}
+                      </div>
                     </TableCell>
                     <TableCell className={classes.tableCell}>
                       {this.onFindAttr(showtime.cinemaId, cinemas, 'name')}
