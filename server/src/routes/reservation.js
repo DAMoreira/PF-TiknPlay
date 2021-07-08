@@ -51,7 +51,7 @@ router.get('/reservations/checkin/:id', async (req, res) => {
       await reservation.save();
       return !reservation ? res.sendStatus(404) : res.send(reservation);
     } else {
-      return res.sendStatus(404);
+      return res.sendStatus(403);
     }
     } catch (e) {
     res.status(400).send(e);

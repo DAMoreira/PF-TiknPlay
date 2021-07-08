@@ -40,7 +40,7 @@ const Routes = () => {
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
 
-          <WithLayoutRoute
+          <ProtectedRoute
             exact
             path="/checkin/:reservationId"
             component={Checkin}
