@@ -13,7 +13,6 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(3)
   },
   borde: {
-    padding: theme.spacing(0.3, 3),
     marginRight: theme.spacing(1),
     border: '2px solid rgba(255,255,255,0.13)',
     borderRadius: 25,

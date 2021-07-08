@@ -43,13 +43,7 @@ router.get('/reservations/:id', async (req, res) => {
 
 // Get reservation checkin by id
 router.get('/reservations/checkin/:id',  auth.enhance2, async (req, res) => {
-  console.log("AAaaaaaaaaaaaaaaaaaAAAAAAAAAAAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-  console.log("AA00aaaaaaaaaaaaaaaAAAAAAAAAAAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-  console.log("AAaa00aaaaaaaaaaaaaaAAAAAAAAAAAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-  console.log("AAaaaa00aaaaaaaaaaaaaAAAAAAAAAAAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-  console.log("AAaaaaaa00aaaaaaaaaaaAAAAAAAAAAAAAAAaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-
-  const _id = req.params.id;
+const _id = req.params.id;
   try {
     const reservation = await Reservation.findById(_id);
     if (reservation.checkin === false) {
