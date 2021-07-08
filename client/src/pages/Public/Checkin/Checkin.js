@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles, Grid, Typography } from '@material-ui/core';
+import CheckCircleOutlinedIcon from '@material-ui/icons/CheckCircleOutlined';
+import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
 
 const useStyles = makeStyles(theme => ({
   title: {
@@ -9,6 +11,14 @@ const useStyles = makeStyles(theme => ({
     textTransform: 'capitalize',
     marginTop: theme.spacing(15),
     marginBottom: theme.spacing(3)
+  },
+  borde: {
+    padding: theme.spacing(0.3, 3),
+    marginRight: theme.spacing(1),
+    border: '2px solid rgba(255,255,255,0.13)',
+    borderRadius: 25,
+    width: 'fit-content',
+    padding: '2%'
   }
 }));
 
@@ -47,13 +57,23 @@ function Checkin(props) {
           Check In
         </Typography>
         {reservation && reservation.checkin ? (
-          <Typography variant="body1" color="primary" align="center">
-            Check in for user: {reservation.username} was successful.
+          <div align="center">
+          <div className={classes.borde}>
+          <CheckCircleOutlinedIcon style={{ fontSize: 100, color: "green" }} align="center"/>
+          <Typography variant="body1" style={{ color: "green" }} align="center" variant="h5">
+            Has realizado el check in de la reserva a nombre de: {reservation.username}
           </Typography>
+          </div>
+          </div>
         ) : (
-          <Typography variant="body1" color="error" align="center">
-            Something went wrong...
+          <div align="center">
+          <div className={classes.borde}>
+          <CancelOutlinedIcon  color="error" style={{ fontSize: 100 }} align="center"/>
+          <Typography variant="body1" color="error" align="center"  variant="h5">
+            La reserva ya fue validada.
           </Typography>
+          </div>
+          </div>
         )}
       </Grid>
     </Grid>
