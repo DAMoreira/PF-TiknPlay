@@ -10,7 +10,7 @@ const router = new express.Router();
 router.post('/reservations', auth.simple, async (req, res) => {
   const reservation = new Reservation(req.body);
 
-  const QRCode = await generateQR(`https://elcinema.herokuapp.com/#/checkin/${reservation._id}`); //Cambiar URL por nuestra pagina
+  const QRCode = await generateQR(`http://190.17.169.64:3000/#/checkin/${reservation._id}`); //Cambiar URL por nuestra pagina
 
   try {
     await reservation.save();
@@ -46,10 +46,14 @@ router.get('/reservations/checkin/:id', async (req, res) => {
   const _id = req.params.id;
   try {
     const reservation = await Reservation.findById(_id);
-    reservation.checkin = true;
-    await reservation.save();
-    return !reservation ? res.sendStatus(404) : res.send(reservation);
-  } catch (e) {
+    if (reservation.checkin === false) {
+      reservation.checkin = true;
+      await reservation.save();
+      return !reservation ? res.sendStatus(404) : res.send(reservation);
+    } else {
+      return res.sendStatus(404);
+    }
+    } catch (e) {
     res.status(400).send(e);
   }
 });
