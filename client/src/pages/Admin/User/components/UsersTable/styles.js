@@ -6,6 +6,10 @@ export default theme => ({
   tableCell: {
     whiteSpace: 'nowrap'
   },
+  titleCell: {
+    align: 'left',
+    fontSize: '0.7857142857142857rem'
+  },
   tableCellInner: {
     display: 'flex',
     alignItems: 'center'

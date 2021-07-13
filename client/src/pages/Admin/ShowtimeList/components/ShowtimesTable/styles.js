@@ -3,6 +3,10 @@ export default theme => ({
   tableRow: {
     height: '64px'
   },
+  titleCell: {
+    align: 'left',
+    fontSize: '0.7857142857142857rem'
+  },
   tableCell: {
     whiteSpace: 'nowrap'
   },
@@ -22,6 +26,7 @@ export default theme => ({
     display: 'inline-block',
     marginLeft: theme.spacing(2),
     fontWeight: 500,
-    cursor: 'pointer'
+    cursor: 'pointer',
+    fontSize: '0.7857142857142857rem'
   }
 });

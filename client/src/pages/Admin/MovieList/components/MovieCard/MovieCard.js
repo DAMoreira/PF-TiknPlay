@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: theme.spacing(2)
   },
   imageWrapper: {
-    height: '200px',
+    height: '450px',
     margin: '0 auto',
     overflow: 'hidden',
     display: 'flex',
@@ -25,7 +25,12 @@ const useStyles = makeStyles(theme => ({
     height: '100%',
     'object-fit': 'cover'
   },
-  details: { padding: theme.spacing(3) },
+  details: {
+    paddingTop: theme.spacing(3),
+    paddingLeft: theme.spacing(3),
+    paddingRight: theme.spacing(3),
+    paddingBottom: theme.spacing(0)
+  },
   title: {
     fontSize: '18px',
     lineHeight: '21px',
@@ -45,7 +50,7 @@ const useStyles = makeStyles(theme => ({
   stats: {
     display: 'flex',
     alignItems: 'center',
-    paddingTop: theme.spacing(1),
+    paddingTop: theme.spacing(0),
     paddingLeft: theme.spacing(3)
   },
   updateIcon: {

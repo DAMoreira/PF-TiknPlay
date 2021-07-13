@@ -28,7 +28,7 @@ class ReservationsToolbar extends Component {
         <div className={classes.row}>
           <SearchInput
             className={classes.searchInput}
-            placeholder="Buscar reservas por ID de película"
+            placeholder="Buscar reservas por nombre de usuario"
             value={search}
             onChange={onChangeSearch}
           />

@@ -62,7 +62,7 @@ class UsersTable extends Component {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell align="left">
+                <TableCell className={classes.titleCell}>
                   <Checkbox
                     checked={selectedUsers.length === users.length}
                     color="primary"
@@ -74,9 +74,9 @@ class UsersTable extends Component {
                   />
                   Nombre completo
                 </TableCell>
-                <TableCell align="left">Nombre de usuario</TableCell>
-                <TableCell align="left">Correo electrónico</TableCell>
-                <TableCell align="left">Fecha de registro</TableCell>
+                <TableCell className={classes.titleCell}>Nombre de usuario</TableCell>
+                <TableCell className={classes.titleCell}>Correo electrónico</TableCell>
+                <TableCell className={classes.titleCell}>Fecha de registro</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>

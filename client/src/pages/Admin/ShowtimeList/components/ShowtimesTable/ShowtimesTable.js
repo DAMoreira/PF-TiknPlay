@@ -82,7 +82,7 @@ class ShowtimesTable extends Component {
                   />
                   ID
                   </TableCell>*/}
-                <TableCell align="left">
+                <TableCell className={classes.titleCell}>
                   <Checkbox
                     checked={selectedShowtimes.length === showtimes.length}
                     color="primary"
@@ -94,10 +94,10 @@ class ShowtimesTable extends Component {
                   />
                   Película
                 </TableCell>
-                <TableCell align="left">Sala</TableCell>
-                <TableCell align="left">Fecha de inicio</TableCell>
-                <TableCell align="left">Fecha de fin</TableCell>
-                <TableCell align="left">Horario</TableCell>
+                <TableCell className={classes.titleCell}>Sala</TableCell>
+                <TableCell className={classes.titleCell}>Fecha de inicio</TableCell>
+                <TableCell className={classes.titleCell}>Fecha de fin</TableCell>
+                <TableCell className={classes.titleCell}>Horario</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -130,15 +130,16 @@ class ShowtimesTable extends Component {
                       </div>
                         </TableCell>*/}
                     <TableCell className={classes.tableCell}>
-                      <div className={classes.tableCellInner}>
-                        <Checkbox
-                          checked={
-                            selectedShowtimes.indexOf(showtime._id) !== -1
-                          }
-                          color="primary"
-                          onChange={() => onSelectShowtime(showtime._id)}
-                          value="true"
-                        />
+                      <Checkbox
+                        checked={
+                          selectedShowtimes.indexOf(showtime._id) !== -1
+                        }
+                        color="primary"
+                        onChange={() => onSelectShowtime(showtime._id)}
+                        value="true"
+                      />
+                      <div className={classes.nameText}>
+
                         {this.onFindAttr(showtime.movieId, movies, 'title').replace(/^[a-z]|[A-Z]/g, function (v, i) {
                           return i === 0 ? v.toUpperCase() : " " + v.toLowerCase()
                         })}
