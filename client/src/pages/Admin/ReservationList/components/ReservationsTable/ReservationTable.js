@@ -57,7 +57,6 @@ class ReservationsTable extends Component {
     const { classes, className, reservations, movies, cinemas } = this.props;
     const { rowsPerPage, page } = this.state;
     const rootClassName = classNames(classes.root, className);
-
     return (
       <Portlet className={rootClassName}>
         <PortletContent noPadding>
@@ -65,19 +64,19 @@ class ReservationsTable extends Component {
             <TableHead>
               <TableRow>
                 <TableCell align="left">Usuario</TableCell>
-                <TableCell align="left">Teléfono</TableCell>
-                <TableCell align="left">Fecha</TableCell>
+                <TableCell align="left">Fecha de función</TableCell>
                 <TableCell align="left">Horario</TableCell>
                 <TableCell align="left">Película</TableCell>
                 <TableCell align="left">Sala</TableCell>
-                <TableCell align="left">Precio Entrada</TableCell>
+                <TableCell align="left">Teléfono</TableCell>
+                <TableCell align="left">Fecha de reserva</TableCell>
                 <TableCell align="left">Precio Total</TableCell>
                 <TableCell align="left">Check in</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {reservations
-                .sort((a, b) => new Date(b.date) - new Date(a.date))
+                .sort((a, b) => new Date(b.createdDate) - new Date(a.createdDate))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map(reservation => (
                   <TableRow
@@ -86,9 +85,6 @@ class ReservationsTable extends Component {
                     key={reservation._id}>
                     <TableCell className={classes.tableCell}>
                       {reservation.username}
-                    </TableCell>
-                    <TableCell className={classes.tableCell}>
-                      {reservation.phone}
                     </TableCell>
                     <TableCell className={classes.tableCell}>
                       {new Date(reservation.date).toLocaleDateString()}
@@ -103,7 +99,10 @@ class ReservationsTable extends Component {
                       {this.onFindAttr(reservation.cinemaId, cinemas, 'name')}
                     </TableCell>
                     <TableCell className={classes.tableCell}>
-                      $ {reservation.ticketPrice}
+                      {reservation.phone}
+                    </TableCell>
+                    <TableCell className={classes.tableCell}>
+                      {new Date(reservation.createdDate).toLocaleDateString()}
                     </TableCell>
                     <TableCell className={classes.tableCell}>
                       $ {reservation.total}

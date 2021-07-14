@@ -24,7 +24,7 @@ router.post('/reservations', auth.simple, async (req, res) => {
 router.get('/reservations', auth.simple, async (req, res) => {
   try {
     const reservations = await Reservation.find({});
-    res.send(reservations);
+   res.send(reservations);
   } catch (e) {
     res.status(400).send(e);
   }
@@ -70,7 +70,7 @@ router.patch('/reservations/:id', auth.enhance, async (req, res) => {
     'total',
     'username',
     'phone',
-    'checkin',
+    'checkin'
   ];
   const isValidOperation = updates.every(update => allowedUpdates.includes(update));
 

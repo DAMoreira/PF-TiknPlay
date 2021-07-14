@@ -21,7 +21,6 @@ conn.once('open', () => {
 router.get('/image/:filename', (req, res) => {
   //console.log(gfs.files.filename);
   gfs.files.findOne({ filename: req.params.filename }, (err, file) => {
-    console.log(file);
     if (!file || file.length === 0) {
       return res.status(404).json({ err: 'No File Exists' });
     } else {

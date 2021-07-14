@@ -22,7 +22,6 @@ const cinemaUserModeling = async (cinemas, username) => {
     sortedCinemaResult.sort((a, b) => {
       return b[1] - a[1];
     });
-    console.log(sortedCinemaResult);
 
     const newCinemas = JSON.parse(JSON.stringify(cinemas));
     let i = 0;
@@ -38,7 +37,6 @@ const cinemaUserModeling = async (cinemas, username) => {
       i++;
     }
 
-    console.log(newCinemas);
 
     return newCinemas;
   } else {

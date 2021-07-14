@@ -138,7 +138,8 @@ class BookingPage extends Component {
       movieId: movie._id,
       cinemaId: cinema._id,
       username: user.username,
-      phone: user.phone
+      phone: user.phone,
+      createdDate: Date.now()
     });
     if (response.status === 'success') {
       const { data } = response;

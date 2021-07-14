@@ -168,7 +168,6 @@ router.get('/users/:id', auth.enhance, async (req, res) => {
 
 // Edit/Update user
 router.patch('/users/me', auth.simple, async (req, res) => {
-  console.log(req.body);
   const updates = Object.keys(req.body);
   const allowedUpdates = ['name', 'phone', 'username', 'email', 'password'];
   const isValidOperation = updates.every(update => allowedUpdates.includes(update));
