@@ -70,6 +70,10 @@ class AddUser extends Component {
     const submitAction = selectedUser
       ? () => this.onUpdateUser()
       : () => this.onAddUser();
+    function convertir(role) {
+      if (role === "admin") return "Administrador"
+      else return "Invitado"
+    }
 
     return (
       <div className={rootClassName}>
@@ -158,7 +162,7 @@ class AddUser extends Component {
               }>
               {['admin', 'guest'].map(role => (
                 <MenuItem key={`role-${role}`} value={role}>
-                  {role}
+                  {convertir(role)}
                 </MenuItem>
               ))}
             </TextField>

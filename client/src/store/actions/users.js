@@ -81,10 +81,9 @@ export const updateUser = (user, id) => async dispatch => {
       body: JSON.stringify(user)
     });
     const data = await response.json();
-    const newUser = data.user;
     if (response.ok) {
       dispatch(setAlert('Usuario Modificado', 'success', 5000));
-      dispatch({ type: UPDATE_USER, payload: newUser });
+      dispatch({ type: UPDATE_USER, payload: data });
       return { status: 'success', message: 'User Updated' };
     } else {
       throw new Error(data._message);
