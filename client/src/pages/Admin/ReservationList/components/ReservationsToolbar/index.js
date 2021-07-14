@@ -32,7 +32,7 @@ class ReservationsToolbar extends Component {
             value={search}
             onChange={onChangeSearch}
           />
-          <DisplayMode mode={mode} onChange={onChangeMode} />
+          {/**<DisplayMode mode={mode} onChange={onChangeMode} />*/}
         </div>
       </div>
     );

@@ -38,11 +38,6 @@ const BestMovies = props => {
         label: 'Año actual',
         backgroundColor: palette.primary.main,
         data: bestMovies.map(movie => movie.count)
-      },
-      {
-        label: 'Año anterior',
-        backgroundColor: palette.neutral,
-        data: [11, 20, 12, 29, 30]
       }
     ]
   };
