@@ -20,7 +20,8 @@ export default theme => ({
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-    opacity: 0.5
+    opacity: 0.5,
+    backgroundImage: 'url(https://source.unsplash.com/featured/?cinema)',
   },
 
   content: {
