@@ -5,6 +5,7 @@ import {
   KeyboardDatePicker
 } from '@material-ui/pickers';
 import MomentUtils from '@date-io/moment';
+import "moment/locale/es";
 
 export default function BookingForm(props) {
   const {
@@ -71,7 +72,7 @@ export default function BookingForm(props) {
     <Grid container spacing={3}>
       {
         <Grid item xs>
-          <MuiPickersUtilsProvider utils={MomentUtils}>
+          <MuiPickersUtilsProvider locale="es" utils={MomentUtils}>
             <KeyboardDatePicker
               inputVariant="outlined"
               margin="none"

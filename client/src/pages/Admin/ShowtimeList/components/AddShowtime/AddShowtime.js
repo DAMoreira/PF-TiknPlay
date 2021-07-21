@@ -9,6 +9,7 @@ import {
   KeyboardDatePicker
 } from '@material-ui/pickers';
 import MomentUtils from '@date-io/moment';
+import "moment/locale/es";
 
 import styles from './styles';
 import { addShowtime, updateShowtime } from '../../../../../store/actions';
@@ -187,7 +188,7 @@ class AddShowtime extends Component {
           </div>
 
           <div className={classes.field}>
-            <MuiPickersUtilsProvider utils={MomentUtils}>
+            <MuiPickersUtilsProvider locale="es" utils={MomentUtils}>
               <KeyboardDatePicker
                 className={classes.textField}
                 inputVariant="outlined"

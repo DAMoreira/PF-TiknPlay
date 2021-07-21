@@ -9,6 +9,7 @@ import {
   KeyboardDatePicker
 } from '@material-ui/pickers';
 import MomentUtils from '@date-io/moment';
+import "moment/locale/es";
 import styles from './styles';
 import { genreData, languageData } from '../../../../../data/MovieDataService';
 import {
@@ -17,6 +18,7 @@ import {
   removeMovie
 } from '../../../../../store/actions';
 import FileUpload from '../../../../../components/FileUpload/FileUpload';
+
 
 class AddMovie extends Component {
   state = {
@@ -231,7 +233,7 @@ class AddMovie extends Component {
             />
           </div>
           <div className={classes.field}>
-            <MuiPickersUtilsProvider utils={MomentUtils}>
+            <MuiPickersUtilsProvider locale="es" utils={MomentUtils}>
               <KeyboardDatePicker
                 className={classes.textField}
                 inputVariant="outlined"
