@@ -152,9 +152,9 @@ class Register extends Component {
                       <Typography
                         className={classes.policyText}
                         variant="body1">
-                        I have read the &nbsp;
+                        He leído los &nbsp;
                         <Link className={classes.policyUrl} to="#">
-                          Terms and Conditions
+                          Términos y condiciones
                         </Link>
                         .
                       </Typography>
