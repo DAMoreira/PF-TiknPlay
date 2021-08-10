@@ -269,7 +269,6 @@ class AddMovie extends Component {
               helperText="Ingresar link del video de YouTube"
               label="Trailer"
               margin="dense"
-              required
               value={trailer}
               variant="outlined"
               onChange={event =>
