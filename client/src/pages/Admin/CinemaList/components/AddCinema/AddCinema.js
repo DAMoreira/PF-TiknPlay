@@ -133,9 +133,8 @@ class AddCinema extends Component {
 
     const rootClassName = classNames(classes.root, className);
     const mainTitle = this.props.editCinema ? 'Modificar sala' : 'Agregar Sala';
-    const submitButton = this.props.editCinema
-      ? 'Guardar cambios'
-      : 'Guardar cambios';
+    const submitButton = 'Guardar cambios';
+
     const submitAction = this.props.editCinema
       ? () => this.onSubmitAction('update')
       : () => this.onSubmitAction('create');
