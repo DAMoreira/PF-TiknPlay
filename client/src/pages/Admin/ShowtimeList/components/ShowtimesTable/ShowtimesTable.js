@@ -32,8 +32,8 @@ class ShowtimesTable extends Component {
 
   static defaultProps = {
     showtimes: [],
-    onSelect: () => { },
-    onShowDetails: () => { }
+    onSelect: () => {},
+    onShowDetails: () => {}
   };
 
   handleChangePage = (event, page) => {

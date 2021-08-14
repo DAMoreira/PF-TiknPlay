@@ -101,9 +101,7 @@ class AddShowtime extends Component {
     const title = this.props.selectedShowtime
       ? 'Modificar función'
       : 'Agregar función';
-    const submitButton = this.props.selectedShowtime
-      ? 'Guardar cambios'
-      : 'Guardar cambios';
+    const submitButton =  'Guardar cambios';
     const submitAction = this.props.selectedShowtime
       ? () => this.onUpdateShowtime()
       : () => this.onAddShowtime();

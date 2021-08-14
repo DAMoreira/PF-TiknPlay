@@ -65,7 +65,7 @@ class AddUser extends Component {
 
     const rootClassName = classNames(classes.root, className);
     const title = selectedUser ? 'Modificar usuario' : 'Agregar usuario';
-    const submitButton = selectedUser ? 'Guardar cambios' : 'Guardar cambios';
+    const submitButton = 'Guardar cambios';
     const submitAction = selectedUser
       ? () => this.onUpdateUser()
       : () => this.onAddUser();
