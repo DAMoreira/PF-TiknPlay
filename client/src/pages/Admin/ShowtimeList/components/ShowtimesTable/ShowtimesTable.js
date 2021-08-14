@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import classNames from 'classnames';
-import { withStyles } from '@material-ui/core';
 import {
   Checkbox,
   Table,
@@ -10,8 +9,8 @@ import {
   TableCell,
   TableHead,
   TableRow,
-  Typography,
-  TablePagination
+  TablePagination,
+  withStyles
 } from '@material-ui/core';
 
 import { Portlet, PortletContent } from '../../../../../components';
