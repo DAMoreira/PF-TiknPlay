@@ -59,7 +59,7 @@ export const addReservation = reservation => async dispatch => {
       dispatch(setAlert('Has reservado con éxito', 'success', 5000));
       return {
         status: 'success',
-        message: 'Reservation Created',
+        message: 'Reserva Creada',
         data: { reservation, QRCode }
       };
     }

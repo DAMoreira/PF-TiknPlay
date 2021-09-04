@@ -55,7 +55,7 @@ export const addUser = user => async dispatch => {
     if (response.ok) {
       dispatch(setAlert('Usuario Creado', 'success', 5000));
       dispatch({ type: ADD_USER, payload: newUser });
-      return { status: 'success', message: 'User Created' };
+      return { status: 'success', message: 'Usuario Creado' };
     } else {
       throw new Error(data._message);
     }
