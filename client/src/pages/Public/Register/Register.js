@@ -1,20 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { register } from '../../../store/actions';
+import { register, setAlert } from '../../../store/actions';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core';
-import {
-  Button,
-  Checkbox,
-  Grid,
-  IconButton,
-  TextField,
-  Typography
-} from '@material-ui/core';
+import { Button, Checkbox, Grid, IconButton, TextField, Typography, withStyles } from '@material-ui/core';
 import { ArrowBack as ArrowBackIcon } from '@material-ui/icons';
 import styles from './styles';
-import FileUpload from '../../../components/FileUpload/FileUpload';
 
 class Register extends Component {
   state = {
@@ -25,8 +16,8 @@ class Register extends Component {
       phone: '',
       password: '',
       image: null,
-      policy: false
-    }
+      policy: false,
+    },
   };
 
   componentDidUpdate(prevProps) {
@@ -43,12 +34,22 @@ class Register extends Component {
   handleFieldChange = (field, value) => {
     const newState = { ...this.state };
     newState.values[field] = value;
+
     this.setState(newState);
   };
 
   handleRegister = () => {
-    const newUser = this.state.values;
-    this.props.register(newUser);
+    if (
+      this.state.values.password === this.state.values.password2 &&
+      this.state.values.password2 !== '' &&
+      this.state.values.password !== ''
+    ) {
+      const newUser = this.state.values;
+      this.props.register(newUser);
+    }
+    else {
+      (setAlert("Las contraseñas no coinciden",'error',3000));
+    }
   };
 
   render() {
@@ -74,61 +75,71 @@ class Register extends Component {
               </div>
               <div className={classes.contentBody}>
                 <form className={classes.form}>
-                  <Typography className={classes.title} variant="h2">
+                  <Typography className={classes.title} variant='h2'>
                     Crear nuevo usuario
                   </Typography>
-                  <Typography className={classes.subtitle} variant="body1">
+                  <Typography className={classes.subtitle} variant='body1'>
                     {/*Use your email to create new account... it's free.*/}
                   </Typography>
                   <div className={classes.fields}>
                     <TextField
                       className={classes.textField}
-                      label="Nombre completo"
-                      name="name"
+                      label='Nombre completo'
+                      name='name'
                       value={values.name}
                       onChange={event =>
                         this.handleFieldChange('name', event.target.value)
                       }
-                      variant="outlined"
+                      variant='outlined'
                     />
                     <TextField
                       className={classes.textField}
-                      label="Nombre de usuario"
-                      name="username"
+                      label='Nombre de usuario'
+                      name='username'
                       value={values.username}
                       onChange={event =>
                         this.handleFieldChange('username', event.target.value)
                       }
-                      variant="outlined"
+                      variant='outlined'
                     />
                     <TextField
                       className={classes.textField}
-                      label="Correo electrónico"
-                      name="email"
+                      label='Correo electrónico'
+                      name='email'
                       value={values.email}
                       onChange={event =>
                         this.handleFieldChange('email', event.target.value)
                       }
-                      variant="outlined"
+                      variant='outlined'
                     />
                     <TextField
                       className={classes.textField}
-                      label="Teléfono"
-                      name="phone"
+                      label='Teléfono'
+                      name='phone'
                       value={values.phone}
-                      variant="outlined"
+                      variant='outlined'
                       onChange={event =>
                         this.handleFieldChange('phone', event.target.value)
                       }
                     />
                     <TextField
                       className={classes.textField}
-                      label="Contraseña"
-                      type="password"
+                      label='Contraseña'
+                      type='password'
                       value={values.password}
-                      variant="outlined"
+                      variant='outlined'
                       onChange={event =>
                         this.handleFieldChange('password', event.target.value)
+                      }
+                    />
+                    <TextField
+                      className={classes.textField}
+                      label='Repetir Contraseña'
+                      type='password'
+                      value={values.password2}
+                      variant='outlined'
+                      onChange={event =>
+                        this.handleFieldChange('password2', event.target.value)
                       }
                     />
                     {/*<FileUpload
@@ -143,17 +154,17 @@ class Register extends Component {
                       <Checkbox
                         checked={values.policy}
                         className={classes.policyCheckbox}
-                        color="primary"
-                        name="policy"
+                        color='primary'
+                        name='policy'
                         onChange={() =>
                           this.handleFieldChange('policy', !values.policy)
                         }
                       />
                       <Typography
                         className={classes.policyText}
-                        variant="body1">
+                        variant='body1'>
                         He leído los &nbsp;
-                        <Link className={classes.policyUrl} to="#">
+                        <Link className={classes.policyUrl} to='#'>
                           Términos y condiciones
                         </Link>
                         .
@@ -163,17 +174,17 @@ class Register extends Component {
 
                   <Button
                     className={classes.registerButton}
-                    color="primary"
+                    color='primary'
                     disabled={!isValid}
                     onClick={this.handleRegister}
-                    size="large"
-                    variant="contained">
+                    size='large'
+                    variant='contained'>
                     Registrarse
                   </Button>
 
-                  <Typography className={classes.login} variant="body1">
+                  <Typography className={classes.login} variant='body1'>
                     Tienes una cuenta?{' '}
-                    <Link className={classes.loginUrl} to="/login">
+                    <Link className={classes.loginUrl} to='/login'>
                       Iniciar sesión
                     </Link>
                   </Typography>
@@ -191,13 +202,13 @@ Register.propTypes = {
   className: PropTypes.string,
   classes: PropTypes.object.isRequired,
   history: PropTypes.object.isRequired,
-  register: PropTypes.func.isRequired
+  register: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.authState.isAuthenticated
+  isAuthenticated: state.authState.isAuthenticated,
 });
 
 export default withStyles(styles)(
-  connect(mapStateToProps, { register })(Register)
+  connect(mapStateToProps, { register })(Register),
 );
