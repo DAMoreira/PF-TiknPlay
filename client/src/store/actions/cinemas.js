@@ -71,7 +71,7 @@ export const createCinemas = (image, newCinema) => async dispatch => {
       dispatch(setAlert('Sala creada con éxito', 'success', 5000));
       if (image) dispatch(uploadCinemaImage(cinema._id, image));
       dispatch(getCinemas());
-      return { status: 'success', message: 'Cinema Created' };
+      return { status: 'success', message: 'Sala Creada' };
     }
   } catch (error) {
     dispatch(setAlert(error.message, 'error', 5000));

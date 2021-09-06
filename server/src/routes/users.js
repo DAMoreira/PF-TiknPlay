@@ -33,7 +33,7 @@ router.post('/users/photo/:id', upload('users').single('file'), async (req, res,
     if (!user) return res.sendStatus(404);
     user.imageurl = `${url}/${file.path}`;
     await user.save();
-    res.send({ user, file });
+    res.send(sanitizeHtml({ user, file }));
   } catch (e) {
     console.log(e);
     res.sendStatus(400).send(e);

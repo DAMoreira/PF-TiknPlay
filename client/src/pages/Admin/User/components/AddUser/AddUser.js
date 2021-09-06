@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { withStyles, Typography } from '@material-ui/core';
-import { Button, TextField, MenuItem } from '@material-ui/core';
+import { withStyles, Typography, Button, TextField, MenuItem } from '@material-ui/core';
 import styles from './styles';
 import { addShowtime, updateShowtime } from '../../../../../store/actions';
 
@@ -66,7 +65,7 @@ class AddUser extends Component {
 
     const rootClassName = classNames(classes.root, className);
     const title = selectedUser ? 'Modificar usuario' : 'Agregar usuario';
-    const submitButton = selectedUser ? 'Guardar cambios' : 'Guardar cambios';
+    const submitButton = 'Guardar cambios';
     const submitAction = selectedUser
       ? () => this.onUpdateUser()
       : () => this.onAddUser();

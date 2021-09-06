@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { withStyles, Typography } from '@material-ui/core';
-import { Button, TextField, MenuItem } from '@material-ui/core';
+import { withStyles, Typography, Button, TextField, MenuItem } from '@material-ui/core';
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker
@@ -102,9 +101,7 @@ class AddShowtime extends Component {
     const title = this.props.selectedShowtime
       ? 'Modificar función'
       : 'Agregar función';
-    const submitButton = this.props.selectedShowtime
-      ? 'Guardar cambios'
-      : 'Guardar cambios';
+    const submitButton =  'Guardar cambios';
     const submitAction = this.props.selectedShowtime
       ? () => this.onUpdateShowtime()
       : () => this.onAddShowtime();

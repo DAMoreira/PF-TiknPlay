@@ -31,7 +31,7 @@ router.post('/cinemas/photo/:id', upload('cinemas').single('file'), async (req, 
     if (!cinema) return res.sendStatus(404);
     cinema.image = `${url}/${file.path}`;
     await cinema.save();
-    res.send({ cinema, file });
+    res.send(sanitizeHtml({ cinema, file }));
   } catch (e) {
     console.log(e);
     res.sendStatus(400).send(e);

@@ -49,7 +49,7 @@ export const addShowtime = showtime => async dispatch => {
     });
     if (response.ok) {
       dispatch(setAlert('Función creada exitosamente!', 'success', 5000));
-      return { status: 'success', message: 'Showtime Created' };
+      return { status: 'success', message: 'Sala Creada' };
     }
   } catch (error) {
     dispatch(setAlert(error.message, 'error', 5000));
@@ -74,7 +74,7 @@ export const updateShowtime = (showtime, id) => async dispatch => {
     });
     if (response.ok) {
       dispatch(setAlert('Función modificada con éxito', 'success', 5000));
-      return { status: 'success', message: 'Showtime Created' };
+      return { status: 'success', message: 'Sala Creada' };
     }
   } catch (error) {
     dispatch(setAlert(error.message, 'error', 5000));
